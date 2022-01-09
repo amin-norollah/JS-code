@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to left, rgb(172, 18, 126), rgb(114, 11, 83));
+}
+
+h1 {
+  font-family: "Monda", Georgia, "Times New Roman", Times, serif;
+  font-size: 30px;
+  text-shadow: 1px 3px 4px rgb(54, 1, 38);
+  color: rgb(255, 212, 242);
+  text-align: center;
+  line-height: 2px;
+}
+
+h2,
+h3,
+h4,
+p {
+  font-family: "Ropa Sans", Georgia, "Times New Roman", Times, serif;
+  color: rgb(255, 212, 242);
+  text-align: center;
+  line-height: 2px;
+}
+
+h2 {
+  font-size: 20px;
+  text-shadow: 1px 2px 3px rgb(54, 1, 38);
+}
+h3 {
+  font-size: 18px;
+  text-shadow: 1px 2px 2px rgb(54, 1, 38);
+}
+h4 {
+  font-size: 14px;
+  text-shadow: 1px 2px 2px rgb(54, 1, 38);
+}
+p {
+  font-size: 12px;
+}
+
+/* score */
+.score-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 5px;
+  padding: 5px 0;
+}
+
+.score-item {
+  display: flex;
+  justify-content: space-around;
+
+  padding: 5px;
+  background-color: rgb(179, 73, 147);
+  box-shadow: 3px 9px 10px -5px rgb(54, 1, 38, 0.4),
+    inset 0px 0px 6px 4px rgb(202, 109, 174, 0.4);
+  border-radius: 7px;
+  height: 60px;
+  opacity: 50%;
+
+  transition: all 0.3s;
+}
+
+.score-item-container {
+  position: absolute;
+}
+
+/* main */
+.main-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 5px;
+
+  background-color: rgb(179, 73, 147);
+  box-shadow: 3px 9px 10px -5px rgb(54, 1, 38, 0.4),
+    inset 0px 0px 6px 4px rgb(202, 109, 174, 0.4);
+  padding: 7px;
+  max-width: 500px;
+  min-width: 320px;
+  border-radius: 5px;
+}
+
+.main-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  aspect-ratio: 1/1;
+  background-color: rgb(255, 212, 242);
+  border-radius: 5px;
+  font-size: 30px;
+
+  transition: all 0.3s;
+}
+
+.main-item:hover {
+  background-color: rgb(252, 221, 242);
+}
+
+.main-item:active {
+  background-color: rgb(236, 191, 223);
+}
+
+.images {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20%;
+}
+
+/* footer */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  font-size: 12px;
+  color: rgb(255, 212, 242);
+  text-align: center;
+  text-shadow: 1px 3px 4px rgb(54, 1, 38);
+}
