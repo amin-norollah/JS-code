@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roll Dice Game</title>
+    <link href="style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Anton"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <p class="Title">🔹 Roll Dice Game 🔹</p>
+      <!-- main container -->
+      <div class="main-container">
+        <!-- left side -->
+        <div class="side-left">
+          <!-- information -->
+          <p class="information" alt="Click for more information!">❕</p>
+          <div class="total-win">
+            <p id="player1-total-win">0</p>
+            <img
+              id="player1-crown-image"
+              src="img/crown.png"
+              width="60"
+              height="38"
+            />
+          </div>
+          <h2 id="player1-name">Player 1</h2>
+          <h3 id="player1-score">Score: 00</h3>
+          <br />
+          <br />
+          <div class="current-score">
+            <h4>Current</h4>
+            <h4 id="player1-current">0</h4>
+          </div>
+        </div>
+        <!-- middle side -->
+        <div class="game-control">
+          <button id="btn-reset">Reset</button>
+          <div class="dice-div">
+            <img
+              id="dice-image"
+              src="img/dice-0.png"
+              width="80"
+              height="80"
+              style="padding: 7px"
+            />
+          </div>
+          <button class="btn-anim" id="btn-roll">Roll dice</button>
+          <button id="btn-hold">Hold</button>
+        </div>
+        <!-- right side -->
+        <div class="side-right">
+          <div class="total-win">
+            <p id="player2-total-win">0</p>
+            <img
+              id="player2-crown-image"
+              src="img/crown.png"
+              width="60"
+              height="38"
+            />
+          </div>
+          <h2 id="player2-name">CPU</h2>
+          <h3 id="player2-score">Score: 00</h3>
+          <br />
+          <br />
+          <div class="current-score">
+            <h4>Current</h4>
+            <h4 id="player2-current">0</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- information details -->
+    <div class="container-information hidden">
+      <button class="close-information-window">&times;</button>
+      <h2>The game roles</h2>
+      <p>
+        Each player should roll dice by pressing the "Roll dice" button. If the
+        dice number is between 2 and 6, it is added to the "current score". The
+        player can collect his points by pressing the "Hold" button and giving
+        the turn to the opponent.
+      </p>
+      <p>
+        If the dice become number 1, the player's high score is reduced by the
+        current score.
+      </p>
+      <p>The player wins if his score is more than 50 points.</p>
+    </div>
+    <div class="container-overlay hidden"></div>
+
+    <footer class="footer">&copy; by Amin Norollah - Balrug.</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
