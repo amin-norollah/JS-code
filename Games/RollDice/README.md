@@ -1,5 +1,5 @@
 <p style="margin: auto; width: 50%;">
-  <img src="demo.gif" alt="alt text">
+  <img src="demo.gif" alt="javascript open-source roll dice game">
 </p>
 
 ## Demo

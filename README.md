@@ -1,6 +1,6 @@
 <p style="margin: auto; width: 50%;">
   <a href="https://amin-norollah.github.io/JS-code/">
-  <img src="banner.png" alt="alt text">
+  <img src="banner.png" alt="javascript open-source projects">
     </a>
   </p>
   
@@ -18,4 +18,5 @@ The following is a list of created projects:
 and you can access the source codes from [this link](https://github.com/amin-norollah/JS-code).
 
 ## Licence
+
 openPDC is licensed under the [MIT license](https://opensource.org/licenses/MIT).
