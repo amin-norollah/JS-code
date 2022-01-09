@@ -155,3 +155,6 @@ DisplayUpdateAndReset();
 mainCells.forEach((cur, i) => {
   cur.addEventListener("click", EventClickCell(cur, i));
 });
+mainContainer.addEventListener("contextmenu", (event) =>
+  event.preventDefault()
+);
