@@ -1,4 +1,4 @@
-![alt text](banner.png)
+![alt text](https://github.com/amin-norollah/JS-code/blob/main/banner.png)
 
 
 ## Welcome to my open-source JS projects
