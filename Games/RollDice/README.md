@@ -1,3 +1,7 @@
+<p style="margin: auto; width: 50%;">
+  <img src="demo.gif" alt="alt text">
+</p>
+
 ## Demo
 
 You can follow the demo version of the project from the below link:
