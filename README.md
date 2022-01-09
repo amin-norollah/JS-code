@@ -1,4 +1,4 @@
-<p>
+<p style="margin: auto; width: 50%;">
   <a href="https://amin-norollah.github.io/JS-code/">
   <img src="banner.png" alt="alt text">
     </a>
