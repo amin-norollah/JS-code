@@ -117,6 +117,15 @@ const AutoReset = function () {
     setTimeout(DisplayUpdateAndReset, 1000);
 };
 
+const preventLongPressMenu = function (nodes) {
+  for (var i = 0; i < nodes.length; i++) {
+    nodes[i].ontouchstart = absorbEvent_;
+    nodes[i].ontouchmove = absorbEvent_;
+    nodes[i].ontouchend = absorbEvent_;
+    nodes[i].ontouchcancel = absorbEvent_;
+  }
+};
+
 /////////////////////////////////////////
 //main
 const GameData = [
@@ -158,3 +167,4 @@ mainCells.forEach((cur, i) => {
 mainContainer.addEventListener("contextmenu", (event) =>
   event.preventDefault()
 );
+preventLongPressMenu(mainCells);
