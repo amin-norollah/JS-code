@@ -41,6 +41,10 @@ p {
   font-size: 12px;
 }
 
+a {
+  color: rgb(255, 231, 212);
+}
+
 /* score */
 .score-container {
   display: grid;

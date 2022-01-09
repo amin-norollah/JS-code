@@ -27,6 +27,9 @@ h4 {
 p {
   text-align: justify;
 }
+a {
+  color: rgb(72, 136, 165);
+}
 
 .Title {
   text-align: center;
