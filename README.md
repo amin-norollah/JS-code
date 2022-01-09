@@ -19,4 +19,4 @@ and you can access the source codes from [this link](https://github.com/amin-nor
 
 ## Licence
 
-openPDC is licensed under the [MIT license](https://opensource.org/licenses/MIT).
+JS-code is licensed under the [MIT license](https://opensource.org/licenses/MIT).

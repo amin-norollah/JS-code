@@ -10,4 +10,4 @@ You can follow the demo version of the project from the below link:
 
 ## Licence
 
-openPDC is licensed under the [MIT license](https://opensource.org/licenses/MIT).
+JS-code is licensed under the [MIT license](https://opensource.org/licenses/MIT).
