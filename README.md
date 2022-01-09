@@ -1,5 +1,5 @@
 <a href="https://amin-norollah.github.io/JS-code/">
-![alt text](https://github.com/amin-norollah/JS-code/blob/main/banner.jpg?raw=true)
+![alt text](banner.png)
 </a>
 ## Welcome to my open-source JS projects
 
