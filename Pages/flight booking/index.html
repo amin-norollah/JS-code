@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Booking Demo</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Monda"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Aldrich"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- header -->
+      <div class="header-area">
+        <h1>Flight booking demo</h1>
+      </div>
+      <!-- account -->
+      <div class="account-area">
+        <li style="font-size: 16px">Current Balance :</li></br>
+        <li id="user-balance" style="font-size: 16px">0</li>
+      </div>
+      <!-- date -->
+      <div class="date-area">
+        <li style="font-size: 16px">Current date :</li></br>
+        <li id="main-date" style="font-size: 16px">0</li>
+      </div>
+      <!-- menu -->
+      <div class="menu-area">
+        <div class="menu-item1 main-effect">
+          <h3>User menu</h3>
+          <form>
+            <li>
+              <input
+                id="input-user-money"
+                type="text"
+                placeholder="Amount of money"
+                style="width: 60%"
+              />
+            </li>
+            <li>
+              <input
+                id="btn-user-request"
+                type="submit"
+                value="Request"
+                style="width: 35%"
+              />
+            </li>
+          </form>
+        </div>
+        <div class="menu-item2 main-effect">
+          <h3>Order management</h3>
+          <label style="color: #fff">Choose orders and delete them:</label>
+
+          <form class="menu-ordered-list">
+            <!-- auto generate -->
+          </form>
+          <input
+            id="btn-order-remove"
+            type="submit"
+            value="Remove"
+            style="width: 35%"
+          />
+        </div>
+      </div>
+      <!-- main -->
+      <div class="main-area main-effect">
+        <div class="main-search">
+          <li>From:</li>
+          <li>
+            <input
+              id="date-search-from"
+              type="date"
+              name="from"
+              style="width: 30%"
+            />
+          </li>
+          <li>To:</li>
+          <li>
+            <input
+              id="date-search-to"
+              type="date"
+              name="to"
+              style="width: 30%"
+            />
+          </li>
+          <li>
+            <input
+              id="btn-search"
+              type="submit"
+              value="Search"
+              style="margin-left: 2%; width: 16%"
+            />
+          </li>
+        </div>
+        <!-- main items -->
+        <div id="main-items">
+          <!-- auto generate -->
+        </div>
+      </div>
+      <!-- footer -->
+      <div class="footer-area">
+        <p>
+          &copy; by Amin Norollah - Balrug.&nbsp;
+          <a href="https://amin-norollah.github.io/JS-code/">(source code)</a>
+        </p>
+      </div>
+    </div>
+
+    <div id="modal-div"></div>
+
+    <button id="scroll-to-top" title="Go to top">Top</button>
+
+    <script src="script.js"></script>
+    <script src="scroll.js"></script>
+  </body>
+</html>
