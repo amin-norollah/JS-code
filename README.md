@@ -10,9 +10,13 @@ JavaScript is one of the core technologies of the web and is a powerful programm
 
 The following is a list of created projects:
 
+(Games)
 - [Roll dice game](https://amin-norollah.github.io/JS-code/Games/RollDice)
 - [XO game manually](https://amin-norollah.github.io/JS-code/Games/XO-manual)
 - [XO game wth CPU](https://amin-norollah.github.io/JS-code/Games/XO-CPU)
+
+(Pages)
+- [Flight booking demo](https://amin-norollah.github.io/JS-code/Pages/FlightBooking/)
 - (in process)
 
 and you can access the source codes from [this link](https://github.com/amin-norollah/JS-code).
