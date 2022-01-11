@@ -160,7 +160,8 @@ DOM_btnSearch.addEventListener("click", () => {
   const TimeSpan = to - from;
 
   if (TimeSpan >= 0) {
-    SearchEngine(from, Math.floor(TimeSpan / (1000 * 60 * 60 * 24)) + 1);
+    const numDays = Math.floor(TimeSpan / (1000 * 60 * 60 * 24)) + 1;
+    SearchEngine(from, numDays <= 30 ? numDays : 30);
     DisplayUpdate(8, 1);
   }
 });
@@ -186,7 +187,7 @@ const SearchEngine = function (startDate, numDays) {
       MainData.airlines
         .filter((airline) => citySrc.level === airline.level)
         .forEach((airline) => {
-          for (let j = 0; j < 2; j++) {
+          for (let j = 0; j < Math.floor(Math.random() * 4) + 1; j++) {
             const rnd = Math.floor(Math.random() * MainData.cities.length) - 1;
             const cityDes = MainData.cities.filter(
               (item) => item.name !== citySrc.name
