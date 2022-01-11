@@ -107,7 +107,7 @@ MainData.CreateOtherData();
 
 const userData = {
   balance: 3500,
-  maxRequest: 8,
+  maxRequest: 4,
   request: 0,
   maxOrder: 8,
   orders: [],
