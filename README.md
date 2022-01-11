@@ -11,13 +11,13 @@ JavaScript is one of the core technologies of the web and is a powerful programm
 The following is a list of created projects:
 
 (Games)
-- [Roll dice game](https://amin-norollah.github.io/JS-code/Games/RollDice): A responsive and simple dice game; whoever can get the most score wins!
-- [XO game manually](https://amin-norollah.github.io/JS-code/Games/XO-manual): A responsive XO game where two users can play with each other.
-- [XO game wth CPU](https://amin-norollah.github.io/JS-code/Games/XO-CPU): It has a JavaScript engine to make it possible for the CPU to play with human.
+- [Roll dice game](https://amin-norollah.github.io/JS-code/Games/RollDice): a responsive and simple dice game; whoever can get the most score wins!
+- [XO game manually](https://amin-norollah.github.io/JS-code/Games/XO-manual): a responsive XO game where two users can play with each other.
+- [XO game wth CPU](https://amin-norollah.github.io/JS-code/Games/XO-CPU): it has a JavaScript engine to make it possible for the CPU to play with human.
 - (in process)
 
 (Pages)
-- [Flight booking demo](https://amin-norollah.github.io/JS-code/Pages/FlightBooking/): A responsive web page to search, book and manage for international flight tickets ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/FlightBooking)).
+- [Flight booking demo](https://amin-norollah.github.io/JS-code/Pages/FlightBooking/): a responsive web page to search, book and manage for international flight tickets ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/FlightBooking)).
 - (in process)
 
 and you can access the source codes from [this link](https://github.com/amin-norollah/JS-code).
