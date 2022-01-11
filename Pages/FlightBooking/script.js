@@ -108,6 +108,7 @@ MainData.CreateOtherData();
 const userData = {
   balance: 3500,
   maxRequest: 8,
+  request: 0,
   maxOrder: 8,
   orders: [],
 };
@@ -343,18 +344,18 @@ const EventSearchItem = function () {
             numTicket: findItem.numOrder,
           };
           userData.orders.push(newOrder);
-          // AlertModal(
-          //   "Successful operation!",
-          //   `Your order has been successfully submitted.</br>
-          //   Ticket information:</br>
-          //   - Order number: <b>${newOrder.number}</b></br>
-          //   - Num. of tickets: <b>${newOrder.numTicket}</b></br>
-          //   - Airline: <b>${newOrder.airline}</b></br>
-          //   - Path: <b>${newOrder.dest}</b></br>
-          //   - Date: <b>${newOrder.date}</b></br>
-          //   - Fee: <b>$${newOrder.fee}</b></br>
-          //   `
-          // );
+          AlertModal(
+            "Successful operation!",
+            `Your order has been successfully submitted.</br>
+            Ticket information:</br>
+            - Order number: <b>${newOrder.number}</b></br>
+            - Num. of tickets: <b>${newOrder.numTicket}</b></br>
+            - Airline: <b>${newOrder.airline}</b></br>
+            - Path: <b>${newOrder.dest}</b></br>
+            - Date: <b>${newOrder.date}</b></br>
+            - Fee: <b>$${newOrder.fee}</b></br>
+            `
+          );
           OrderManagementUpdate();
         } else {
           //you are not allowed to order this item
@@ -406,6 +407,7 @@ const OrderManagementUpdate = function () {
   });
 };
 
+//Other event handelers
 DOM_btnRemove.addEventListener("click", () => {
   document.querySelectorAll("#ordered-check")?.forEach((item) => {
     if (item.checked) {
@@ -422,6 +424,31 @@ DOM_btnRemove.addEventListener("click", () => {
   });
   OrderManagementUpdate();
   UpdateUserData();
+});
+
+DOM_btnRequestMoney.addEventListener("click", (e) => {
+  // Prevent form from submitting
+  e.preventDefault();
+
+  const request = +DOM_RequestMoney.value;
+  if (!isNaN(request) && request > 0)
+    if (userData.request < userData.maxRequest) {
+      AlertModal(
+        "Successful operation!",
+        "Your request has been successfully submitted and after 4 seconds it would be applied."
+      );
+      userData.request++;
+      setTimeout(() => {
+        userData.balance += request;
+        UpdateUserData();
+      }, 4000);
+    } else {
+      AlertModal(
+        "Failed operation!",
+        "You are not allowed to apply for more loans."
+      );
+    }
+  else AlertModal("Failed operation!", "Please enter the valid number.");
 });
 
 const BalanceOption = { style: "currency", currency: "USD" };

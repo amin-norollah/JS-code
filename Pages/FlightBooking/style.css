@@ -185,6 +185,7 @@ li {
 /* inputs */
 input[type="text"],
 input[type="submit"],
+input[type="number"],
 /* input[type="checkbox"]:checked + label, */
 input[type="date"] {
   font-family: "Aldrich", "Times New Roman", Times, serif;
@@ -194,7 +195,7 @@ input[type="date"] {
   color: rgb(180, 180, 180);
   padding: 5px;
   margin: 2px 0;
-  height: 30px;
+  height: 25px;
   border-radius: 4px;
   display: inline-block;
   transition: all 0.3s;
