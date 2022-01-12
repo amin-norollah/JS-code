@@ -398,15 +398,23 @@ const AlertModal = function (title, msg) {
   DOM_modals.insertAdjacentHTML(
     "afterbegin",
     `
-  <div class="modal-main">
+  <div class="modal-main modal-hidden">
         <button class="modal-close">&times;</button>
         <h2>${title}</h2>
         <p>${msg}</p>
       </div>
-  <div class="modal-overlay"></div>`
+  <div class="modal-overlay modal-hidden"></div>`
   );
+  setTimeout(() => {
+    document.querySelectorAll(".modal-hidden").forEach((item) => {
+      item.classList.remove("modal-hidden");
+    });
+  }, 2);
+
   document.querySelector(".modal-close").addEventListener("click", () => {
-    DOM_modals.innerHTML = "";
+    document.querySelector(".modal-main").classList.add("modal-hidden");
+    document.querySelector(".modal-overlay").classList.add("modal-hidden");
+    setTimeout(() => (DOM_modals.innerHTML = ""), 300);
   });
 };
 

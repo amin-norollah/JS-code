@@ -407,6 +407,8 @@ input[type="submit"] {
     rgb(189, 189, 189) 90%
   );
   z-index: 6;
+
+  transition: all 0.5s;
 }
 
 .modal-overlay {
@@ -418,6 +420,13 @@ input[type="submit"] {
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
   z-index: 5;
+
+  transition: all 0.3s;
+}
+
+.modal-hidden {
+  visibility: hidden;
+  opacity: 0;
 }
 
 .modal-close {
