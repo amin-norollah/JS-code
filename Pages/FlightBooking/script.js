@@ -101,7 +101,7 @@ const MainData = {
     },
   ],
 
-  basePrice: 400,
+  basePrice: 425.2,
 
   CreateOtherData() {
     this.cities.forEach((item) => {
@@ -247,7 +247,7 @@ const SearchEngine = function (startDate, numDays) {
 };
 
 const CalculatePrice = function (basePrice, factor, diffLevel, numOrder) {
-  return Math.floor(basePrice * factor * numOrder * diffLevel);
+  return Math.round(basePrice * factor * numOrder * diffLevel * 100) / 100;
 };
 
 const DisplayUpdate = function (NumDisplay, iteration) {
@@ -275,9 +275,11 @@ const DisplayUpdate = function (NumDisplay, iteration) {
           <h5>${spanTime(item.time)}</h5>
         </div>
         <div>
-          <h4 id="search-item-price-${item.id}" style="color: green">$${
+          <h4 id="search-item-price-${
+            item.id
+          }" style="color: green">$${new Intl.NumberFormat("en-US").format(
         item.price
-      }</h4>
+      )}</h4>
           <input
             id="search-item-num"
             name = "${item.id}"
@@ -350,9 +352,12 @@ const EventSearchItem = function () {
       const findItem = CurrentSearch.find(
         (element) => element.id === +item.name
       );
-      const CurrentPrice = +document
-        .querySelector(`#search-item-price-${findItem.id}`)
-        .innerHTML.slice(1);
+      const CurrentPrice = +parseLocaleNumber(
+        document
+          .querySelector(`#search-item-price-${findItem.id}`)
+          .innerHTML.slice(1),
+        "en"
+      );
 
       if (userData.orders.length < userData.maxOrder) {
         if (userData.balance >= CurrentPrice) {
@@ -398,6 +403,14 @@ const EventSearchItem = function () {
       UpdateUserData();
     })
   );
+};
+
+const parseLocaleNumber = function (val, locale) {
+  var group = new Intl.NumberFormat(locale).format(1111).replace(/1/g, "");
+  var decimal = new Intl.NumberFormat(locale).format(1.1).replace(/1/g, "");
+  var reversedVal = val.replace(new RegExp("\\" + group, "g"), "");
+  reversedVal = reversedVal.replace(new RegExp("\\" + decimal, "g"), ".");
+  return Number.isNaN(reversedVal) ? 0 : reversedVal;
 };
 
 const AlertModal = function (title, msg) {
@@ -482,13 +495,11 @@ DOM_btnRequestMoney.addEventListener("click", (e) => {
   else AlertModal("Failed operation!", "Please enter the valid number.");
 });
 
-const BalanceOption = { style: "currency", currency: "USD" };
+// const BalanceOption = { style: "currency", currency: "USD" };
 
 const UpdateUserData = function () {
-  DOM_UserBalance.innerHTML = new Intl.NumberFormat(
-    navigator.language,
-    BalanceOption
-  ).format(userData.balance);
+  DOM_UserBalance.innerHTML =
+    "$" + new Intl.NumberFormat("en-US").format(userData.balance);
 };
 
 //initialization
@@ -503,10 +514,10 @@ DOM_MainDate.innerHTML = new Date().toLocaleDateString("en-us", {
 });
 
 //sort
-let sortPriceOrder = false;
-let sortCitiesOrder = false;
+let sortPriceOrder = true;
+let sortCitiesOrder = true;
 let sortAirlinesOrder = true;
-let sortDateOrder = false;
+let sortDateOrder = true;
 DOM_sortPrice.addEventListener("click", (e) => {
   e.preventDefault();
 
