@@ -20,6 +20,12 @@ const DOM_modals = document.querySelector("#modal-div");
 const DOM_Generate_orderedList = document.querySelector(".menu-ordered-list");
 const DOM_Generate_searchItems = document.querySelector("#main-items");
 
+//sort
+const DOM_sortPrice = document.querySelector("#btn-sort-price");
+const DOM_sortCity = document.querySelector("#btn-sort-city");
+const DOM_sortAirlines = document.querySelector("#btn-sort-airlines");
+const DOM_sortDate = document.querySelector("#btn-sort-date");
+
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
 //values
@@ -95,7 +101,7 @@ const MainData = {
     },
   ],
 
-  baseFee: 400,
+  basePrice: 400,
 
   CreateOtherData() {
     this.cities.forEach((item) => {
@@ -193,6 +199,14 @@ const SearchEngine = function (startDate, numDays) {
               (item) => item.name !== citySrc.name
             )[Math.floor(Math.random() * (MainData.cities.length - 1))];
 
+            //generate time
+            const tmpTime = randomTime(Math.abs(citySrc.level - cityDes.level));
+
+            //update time in theDay object
+            theDay.setHours(tmpTime[0].getHours());
+            theDay.setMinutes(tmpTime[0].getMinutes());
+
+            //push new data to CurrentSearch array
             CurrentSearch.push({
               id: count,
               numOrder: 1,
@@ -203,11 +217,13 @@ const SearchEngine = function (startDate, numDays) {
                 year: "numeric",
                 month: "short",
                 day: "numeric",
+                hour: "numeric",
+                minute: "numeric",
               }),
-              time: randomTime(Math.abs(citySrc.level - cityDes.level)),
+              time: tmpTime,
               diffLevel: Math.abs(citySrc.level - cityDes.level) + 1,
-              fee: CalculateFee(
-                MainData.baseFee,
+              price: CalculatePrice(
+                MainData.basePrice,
                 airline.factor,
                 Math.abs(citySrc.level - cityDes.level) + 1,
                 1
@@ -224,16 +240,58 @@ const SearchEngine = function (startDate, numDays) {
   DisplayUpdate(8, 1);
 };
 
-const CalculateFee = function (baseFee, factor, diffLevel, numOrder) {
-  return Math.floor(baseFee * factor * numOrder * diffLevel);
+const CalculatePrice = function (basePrice, factor, diffLevel, numOrder) {
+  return Math.floor(basePrice * factor * numOrder * diffLevel);
 };
 
 const DisplayUpdate = function (NumDisplay, iteration) {
   DOM_Generate_searchItems.innerHTML = "";
 
+  //search contents
+  CurrentSearch.filter(
+    (_, index) =>
+      index < NumDisplay * iteration && index >= NumDisplay * (iteration - 1)
+  ).forEach((item) => {
+    DOM_Generate_searchItems.insertAdjacentHTML(
+      "beforeend",
+      `
+        <div class="main-item">
+        <div>
+          <img src="${item.airline.img}" style="width: 90%" />
+        </div>
+        <div>
+          <h4>${item.airline.name}</h4>
+          <h5>${item.path}</h5>
+        </div>
+        <div>
+          <h4>${item.date}</h4>
+          <h4>${stringTimes(item.time)}</h4>
+          <h5>${spanTime(item.time)}</h5>
+        </div>
+        <div>
+          <h4 id="search-item-price-${item.id}" style="color: green">$${
+        item.price
+      }</h4>
+          <input
+            id="search-item-num"
+            name = "${item.id}"
+            type="number"
+            step="1"
+            value =1
+            min="1"
+            max="10"
+          />
+          <input id="search-item-order" name = "${
+            item.id
+          }" type="submit" value="Order" />
+        </div>
+      </div>`
+    );
+  });
+
   //page change buttons
   DOM_Generate_searchItems.insertAdjacentHTML(
-    "afterbegin",
+    "beforeend",
     ` 
     <div class="page-change">
         <li id="page-previous" class="page-change-button page-change-round">&#8249;</li>
@@ -254,53 +312,11 @@ const DisplayUpdate = function (NumDisplay, iteration) {
       DisplayUpdate(NumDisplay, currentSearchPages);
     });
 
-  //search contents
-  CurrentSearch.filter(
-    (_, index) =>
-      index < NumDisplay * iteration && index >= NumDisplay * (iteration - 1)
-  ).forEach((item) => {
-    DOM_Generate_searchItems.insertAdjacentHTML(
-      "afterbegin",
-      `
-        <div class="main-item">
-        <div>
-          <img src="${item.airline.img}" style="width: 90%" />
-        </div>
-        <div>
-          <h4>${item.airline.name}</h4>
-          <h5>${item.path}</h5>
-        </div>
-        <div>
-          <h4>${item.date}</h4>
-          <h4>${stringTimes(item.time)}</h4>
-          <h5>${spanTime(item.time)}</h5>
-        </div>
-        <div>
-          <h4 id="search-item-fee-${item.id}" style="color: green">$${
-        item.fee
-      }</h4>
-          <input
-            id="search-item-num"
-            name = "${item.id}"
-            type="number"
-            step="1"
-            value =1
-            min="1"
-            max="10"
-          />
-          <input id="search-item-order" name = "${
-            item.id
-          }" type="submit" value="Order" />
-        </div>
-      </div>`
-    );
-  });
-
   //event handelers for page changing
   EventSearchItem();
 };
 
-//when we want to increase the number of orders, we need to update the number of orders in "CurrentSearch" object and total fee.
+//when we want to increase the number of orders, we need to update the number of orders in "CurrentSearch" object and total price.
 const EventSearchItem = function () {
   document.querySelectorAll("#search-item-num").forEach((item) =>
     item.addEventListener("click", () => {
@@ -309,15 +325,15 @@ const EventSearchItem = function () {
         (element) => element.id === +item.name
       );
       findItem.numOrder = +item.value;
-      findItem.fee = CalculateFee(
-        MainData.baseFee,
+      findItem.price = CalculatePrice(
+        MainData.basePrice,
         findItem.airline.factor,
         findItem.diffLevel,
         findItem.numOrder
       );
       document.querySelector(
-        `#search-item-fee-${findItem.id}`
-      ).innerHTML = `$${findItem.fee}`;
+        `#search-item-price-${findItem.id}`
+      ).innerHTML = `$${findItem.price}`;
     })
   );
 
@@ -328,20 +344,20 @@ const EventSearchItem = function () {
       const findItem = CurrentSearch.find(
         (element) => element.id === +item.name
       );
-      const CurrentFee = +document
-        .querySelector(`#search-item-fee-${findItem.id}`)
+      const CurrentPrice = +document
+        .querySelector(`#search-item-price-${findItem.id}`)
         .innerHTML.slice(1);
 
       if (userData.orders.length < userData.maxOrder) {
-        if (userData.balance >= CurrentFee) {
+        if (userData.balance >= CurrentPrice) {
           //have enough money
-          userData.balance -= CurrentFee;
+          userData.balance -= CurrentPrice;
           const newOrder = {
             number: String(Math.floor(Math.random() * 9000000)).padStart(7, 0),
             airline: findItem.airline.name,
             dest: findItem.path,
             date: findItem.date,
-            fee: CurrentFee,
+            price: CurrentPrice,
             numTicket: findItem.numOrder,
           };
           userData.orders.push(newOrder);
@@ -354,7 +370,7 @@ const EventSearchItem = function () {
             - Airline: <b>${newOrder.airline}</b></br>
             - Path: <b>${newOrder.dest}</b></br>
             - Date: <b>${newOrder.date}</b></br>
-            - Fee: <b>$${newOrder.fee}</b></br>
+            - Price: <b>$${newOrder.price}</b></br>
             `
           );
           OrderManagementUpdate();
@@ -417,7 +433,7 @@ DOM_btnRemove.addEventListener("click", () => {
       );
 
       //return money
-      userData.balance += userData.orders[index].fee;
+      userData.balance += userData.orders[index].price;
 
       //delete
       if (index > -1) userData.orders.splice(index, 1);
@@ -470,4 +486,105 @@ DOM_MainDate.innerHTML = new Date().toLocaleDateString("en-us", {
   year: "numeric",
   month: "short",
   day: "numeric",
+});
+
+//sort
+let sortPriceOrder = false;
+let sortCitiesOrder = false;
+let sortAirlinesOrder = false;
+let sortDateOrder = false;
+DOM_sortPrice.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (sortPriceOrder) {
+    CurrentSearch.sort((a, b) => {
+      if (a.price > b.price) return 1;
+      if (a.price <= b.price) return -1;
+    });
+    DOM_sortPrice.value = "↓ Sort by price";
+  } else {
+    CurrentSearch.sort((a, b) => {
+      if (a.price <= b.price) return 1;
+      if (a.price > b.price) return -1;
+    });
+    DOM_sortPrice.value = "↑ Sort by price";
+  }
+
+  //change sort order for next sorting
+  sortPriceOrder = !sortPriceOrder;
+
+  //update search results
+  DisplayUpdate(8, 1);
+});
+DOM_sortCity.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (sortCitiesOrder) {
+    CurrentSearch.sort((a, b) => {
+      console.log(a.path <= b.path);
+      if (a.path > b.path) return 1;
+      if (a.path <= b.path) return -1;
+    });
+    DOM_sortCity.value = "↓ Sort by cities";
+  } else {
+    CurrentSearch.sort((a, b) => {
+      if (a.path <= b.path) return 1;
+      if (a.path > b.path) return -1;
+    });
+    DOM_sortCity.value = "↑ Sort by cities";
+  }
+
+  //change sort order for next sorting
+  sortCitiesOrder = !sortCitiesOrder;
+
+  //update search results
+  DisplayUpdate(8, 1);
+});
+
+DOM_sortAirlines.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (sortAirlinesOrder) {
+    CurrentSearch.sort((a, b) => {
+      if (a.airline <= b.airline) return 1;
+      if (a.airline > b.airline) return -1;
+    });
+    DOM_sortAirlines.value = "↓ Sort by airlines";
+  } else {
+    CurrentSearch.sort((a, b) => {
+      if (a.airline > b.airline) return 1;
+      if (a.airline <= b.airline) return -1;
+    });
+    DOM_sortAirlines.value = "↑ Sort by airlines";
+  }
+
+  //change sort order for next sorting
+  sortAirlinesOrder = !sortAirlinesOrder;
+
+  //update search results
+  DisplayUpdate(8, 1);
+});
+DOM_sortDate.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (sortDateOrder) {
+    CurrentSearch.sort((a, b) => {
+      const tmp = new Date(b.date) - new Date(a.date);
+      if (tmp <= 0) return 1;
+      if (tmp > 0) return -1;
+    });
+    DOM_sortDate.value = "↓ Sort by date";
+  } else {
+    CurrentSearch.sort((a, b) => {
+      const tmp = new Date(b.date) - new Date(a.date);
+      if (tmp > 0) return 1;
+      if (tmp <= 0) return -1;
+    });
+    DOM_sortDate.value = "↑ Sort by date";
+  }
+
+  //change sort order for next sorting
+  sortDateOrder = !sortDateOrder;
+
+  //update search results
+  DisplayUpdate(8, 1);
 });

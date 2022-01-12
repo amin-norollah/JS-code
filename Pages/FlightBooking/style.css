@@ -61,12 +61,12 @@ li {
     "account account date date date date"
     "menu menu main main main main"
     "menu menu footer footer footer footer";
-  grid-gap: 10px;
+  grid-gap: 5px;
   background-color: #e7e7e7;
   background: linear-gradient(
     to bottom,
-    #f0f0f0 0%,
-    #e7e7e7 40%,
+    #f8f8f8 0%,
+    #e4e4e4 50px,
     #dadada 92%,
     #c2c2c2 100%
   );
@@ -78,34 +78,21 @@ li {
   border-radius: 8px;
 
   margin: auto;
-  padding: 20px 10px;
+  /* padding: 20px 10px; */
   width: 80%;
   max-width: 900px;
   min-width: 350px;
 }
 
-@media only screen and (max-width: 600px) {
-  h4,
-  h5 {
-    font-size: 11px;
-  }
-  .main-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "header"
-      "account"
-      "date"
-      "main"
-      "menu"
-      "footer";
-  }
-}
-
 .header-area {
   grid-area: header;
-  padding: 15px 0 35px 0;
+  padding-top: 25px;
+  padding-bottom: 75px;
+  background-image: url("img/cloud-pattern.png"), url("img/plane.png");
+  background-repeat: repeat-x, no-repeat;
+  background-position: bottom, right;
 }
+
 .account-area {
   grid-area: account;
   text-align: center;
@@ -116,6 +103,7 @@ li {
 }
 .menu-area {
   grid-area: menu;
+  margin: 0 5px 10px 10px;
   text-align: center;
 }
 .main-area {
@@ -124,9 +112,11 @@ li {
   box-shadow: 0px 8px 5px -7px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   padding: 10px;
+  margin: 0 10px 10px 0;
 }
 .footer-area {
   grid-area: footer;
+  margin: 10px;
   height: 30px;
   text-align: center;
 }
@@ -249,7 +239,6 @@ input[type="submit"] {
 /* main items */
 
 #main-items {
-  margin-top: 6px;
   padding: 4px;
   /* overflow-y: scroll; */
   transition: all 0.5s;
@@ -310,6 +299,34 @@ input[type="submit"] {
 .main-item:hover {
   background-color: #fff;
   box-shadow: 0px 0px 4px 0px rgba(80, 80, 80, 0.8);
+}
+
+/* search and sort */
+.main-search {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.2fr 1fr 1fr;
+  gap: 5px;
+  align-items: center;
+}
+
+.main-search input[type="date"] {
+  width: 100%;
+}
+
+.main-search input[type="submit"] {
+  width: 100%;
+}
+
+#main-sort {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+#main-sort input[type="submit"] {
+  width: 100%;
+  height: 40px;
 }
 
 /* scroll to top */
@@ -402,4 +419,32 @@ input[type="submit"] {
   float: right;
   font-size: 18px;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  h4,
+  h5 {
+    font-size: 11px;
+  }
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "account"
+      "date"
+      "main"
+      "menu"
+      "footer";
+  }
+  .main-area,
+  .menu-area {
+    margin: 10px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .main-search {
+    display: inline;
+  }
 }

@@ -24,13 +24,13 @@
       </div>
       <!-- account -->
       <div class="account-area">
-        <li style="font-size: 16px">Current Balance :</li></br>
-        <li id="user-balance" style="font-size: 16px">0</li>
+        <li style="font-size: 12px">Current Balance :</li>
+        <li id="user-balance" style="font-size: 12px">0</li>
       </div>
       <!-- date -->
       <div class="date-area">
-        <li style="font-size: 16px">Current date :</li></br>
-        <li id="main-date" style="font-size: 16px">0</li>
+        <li style="font-size: 12px">Current date :</li>
+        <li id="main-date" style="font-size: 12px">0</li>
       </div>
       <!-- menu -->
       <div class="menu-area">
@@ -77,29 +77,33 @@
         <div class="main-search">
           <li>From:</li>
           <li>
-            <input
-              id="date-search-from"
-              type="date"
-              name="from"
-              style="width: 30%"
-            />
+            <input id="date-search-from" type="date" name="from" />
           </li>
           <li>To:</li>
           <li>
-            <input
-              id="date-search-to"
-              type="date"
-              name="to"
-              style="width: 30%"
-            />
+            <input id="date-search-to" type="date" name="to" />
+          </li>
+          <li>
+            <input id="btn-search" type="submit" value="Search" />
+          </li>
+        </div>
+        <!-- sort -->
+        <div id="main-sort">
+          <li>
+            <input id="btn-sort-price" type="submit" value="Sort by price" />
+          </li>
+          <li>
+            <input id="btn-sort-city" type="submit" value="Sort by city" />
           </li>
           <li>
             <input
-              id="btn-search"
+              id="btn-sort-airlines"
               type="submit"
-              value="Search"
-              style="margin-left: 2%; width: 16%"
+              value="Sort by airlines"
             />
+          </li>
+          <li>
+            <input id="btn-sort-date" type="submit" value="Sort by date" />
           </li>
         </div>
         <!-- main items -->
