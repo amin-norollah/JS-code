@@ -397,7 +397,7 @@ input[type="submit"] {
   transform: translate(-50%, -50%);
   min-width: 340px;
 
-  padding: 2px 20px;
+  padding: 20px 40px;
   border-radius: 10px;
   background-color: white;
   background: linear-gradient(

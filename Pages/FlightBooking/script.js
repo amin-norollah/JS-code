@@ -128,6 +128,7 @@ const CurrentSearch = [];
 ///////////////////////////////////////////////////
 //functions
 
+///////////////////////////////////////////////////
 const randomTime = function (level) {
   const [rndHour1, rndMin1] = [
     Math.floor(Math.random() * 12),
@@ -144,6 +145,7 @@ const randomTime = function (level) {
   ];
 };
 
+///////////////////////////////////////////////////
 const stringTimes = function ([time1, time2]) {
   return ` ${String(time1.getHours()).padStart(2, 0)}:${String(
     time1.getMinutes()
@@ -152,6 +154,7 @@ const stringTimes = function ([time1, time2]) {
   ).padStart(2, 0)}`;
 };
 
+///////////////////////////////////////////////////
 const spanTime = function ([time1, time2]) {
   const tmp = Math.floor((time2 - time1) / (1000 * 60));
   const hours = Math.floor(tmp / 60);
@@ -172,6 +175,7 @@ DOM_btnSearch.addEventListener("click", () => {
   }
 });
 
+///////////////////////////////////////////////////
 const SearchEngine = function (startDate, numDays) {
   //reset values
   CurrentSearch.splice(0, CurrentSearch.length);
@@ -246,10 +250,12 @@ const SearchEngine = function (startDate, numDays) {
   DisplayUpdate(12, 1);
 };
 
+///////////////////////////////////////////////////
 const CalculatePrice = function (basePrice, factor, diffLevel, numOrder) {
   return Math.round(basePrice * factor * numOrder * diffLevel * 100) / 100;
 };
 
+///////////////////////////////////////////////////
 const DisplayUpdate = function (NumDisplay, iteration) {
   DOM_Generate_searchItems.innerHTML = "";
 
@@ -324,6 +330,7 @@ const DisplayUpdate = function (NumDisplay, iteration) {
   EventSearchItem();
 };
 
+///////////////////////////////////////////////////
 //when we want to increase the number of orders, we need to update the number of orders in "CurrentSearch" object and total price.
 const EventSearchItem = function () {
   document.querySelectorAll("#search-item-num").forEach((item) =>
@@ -380,7 +387,7 @@ const EventSearchItem = function () {
             - Num. of tickets: <b>${newOrder.numTicket}</b></br>
             - Airline: <b>${newOrder.airline}</b></br>
             - Path: <b>${newOrder.dest}</b></br>
-            - Date: <b>${newOrder.actualDate}</b></br>
+            - Flight date: <b>${newOrder.date}</b></br>
             - Price: <b>$${newOrder.price}</b></br>
             `
           );
@@ -405,6 +412,7 @@ const EventSearchItem = function () {
   );
 };
 
+///////////////////////////////////////////////////
 const parseLocaleNumber = function (val, locale) {
   var group = new Intl.NumberFormat(locale).format(1111).replace(/1/g, "");
   var decimal = new Intl.NumberFormat(locale).format(1.1).replace(/1/g, "");
@@ -413,6 +421,7 @@ const parseLocaleNumber = function (val, locale) {
   return Number.isNaN(reversedVal) ? 0 : reversedVal;
 };
 
+///////////////////////////////////////////////////
 const AlertModal = function (title, msg) {
   DOM_modals.insertAdjacentHTML(
     "afterbegin",
@@ -437,6 +446,7 @@ const AlertModal = function (title, msg) {
   });
 };
 
+///////////////////////////////////////////////////
 const OrderManagementUpdate = function () {
   DOM_Generate_orderedList.innerHTML = "";
 
@@ -451,6 +461,7 @@ const OrderManagementUpdate = function () {
   });
 };
 
+///////////////////////////////////////////////////
 //Other event handelers
 DOM_btnRemove.addEventListener("click", () => {
   document.querySelectorAll("#ordered-check")?.forEach((item) => {
@@ -495,24 +506,13 @@ DOM_btnRequestMoney.addEventListener("click", (e) => {
   else AlertModal("Failed operation!", "Please enter the valid number.");
 });
 
-// const BalanceOption = { style: "currency", currency: "USD" };
-
+///////////////////////////////////////////////////
 const UpdateUserData = function () {
   DOM_UserBalance.innerHTML =
     "$" + new Intl.NumberFormat("en-US").format(userData.balance);
 };
 
-//initialization
-SearchEngine(new Date(), 1);
-UpdateUserData();
-
-//todays date
-DOM_MainDate.innerHTML = new Date().toLocaleDateString("en-us", {
-  year: "numeric",
-  month: "short",
-  day: "numeric",
-});
-
+///////////////////////////////////////////////////
 //sort
 let sortPriceOrder = true;
 let sortCitiesOrder = true;
@@ -541,6 +541,7 @@ DOM_sortPrice.addEventListener("click", (e) => {
   //update search results
   DisplayUpdate(12, 1);
 });
+
 DOM_sortCity.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -550,13 +551,13 @@ DOM_sortCity.addEventListener("click", (e) => {
       if (a.path > b.path) return 1;
       if (a.path <= b.path) return -1;
     });
-    DOM_sortCity.value = "↓ Sort by cities";
+    DOM_sortCity.value = "↓ Sort by city";
   } else {
     CurrentSearch.sort((a, b) => {
       if (a.path <= b.path) return 1;
       if (a.path > b.path) return -1;
     });
-    DOM_sortCity.value = "↑ Sort by cities";
+    DOM_sortCity.value = "↑ Sort by city";
   }
 
   //change sort order for next sorting
@@ -574,13 +575,13 @@ DOM_sortAirlines.addEventListener("click", (e) => {
       if (a.airline.name > b.airline.name) return 1;
       if (a.airline.name <= b.airline.name) return -1;
     });
-    DOM_sortAirlines.value = "↓ Sort by airlines";
+    DOM_sortAirlines.value = "↓ Sort by airline";
   } else {
     CurrentSearch.sort((a, b) => {
       if (a.airline.name <= b.airline.name) return 1;
       if (a.airline.name > b.airline.name) return -1;
     });
-    DOM_sortAirlines.value = "↑ Sort by airlines";
+    DOM_sortAirlines.value = "↑ Sort by airline";
   }
 
   //change sort order for next sorting
@@ -589,6 +590,7 @@ DOM_sortAirlines.addEventListener("click", (e) => {
   //update search results
   DisplayUpdate(12, 1);
 });
+
 DOM_sortDate.addEventListener("click", (e) => {
   e.preventDefault();
   if (sortDateOrder) {
@@ -612,4 +614,17 @@ DOM_sortDate.addEventListener("click", (e) => {
 
   //update search results
   DisplayUpdate(12, 1);
+});
+
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//initialization
+SearchEngine(new Date(), 1);
+UpdateUserData();
+
+//todays date
+DOM_MainDate.innerHTML = new Date().toLocaleDateString("en-us", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
 });
