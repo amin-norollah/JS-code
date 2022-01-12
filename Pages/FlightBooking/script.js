@@ -212,7 +212,13 @@ const SearchEngine = function (startDate, numDays) {
               numOrder: 1,
               airline: airline,
               path: `${citySrc.abbreviation}- ${cityDes.abbreviation}`,
-              date: new Date(theDay).toLocaleDateString("en-us", {
+              displayDate: new Date(theDay).toLocaleDateString("en-us", {
+                weekday: "short",
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              }),
+              actualDate: new Date(theDay).toLocaleDateString("en-us", {
                 weekday: "short",
                 year: "numeric",
                 month: "short",
@@ -264,7 +270,7 @@ const DisplayUpdate = function (NumDisplay, iteration) {
           <h5>${item.path}</h5>
         </div>
         <div>
-          <h4>${item.date}</h4>
+          <h4>${item.displayDate}</h4>
           <h4>${stringTimes(item.time)}</h4>
           <h5>${spanTime(item.time)}</h5>
         </div>
@@ -356,7 +362,7 @@ const EventSearchItem = function () {
             number: String(Math.floor(Math.random() * 9000000)).padStart(7, 0),
             airline: findItem.airline.name,
             dest: findItem.path,
-            date: findItem.date,
+            date: findItem.actualDate,
             price: CurrentPrice,
             numTicket: findItem.numOrder,
           };
@@ -369,7 +375,7 @@ const EventSearchItem = function () {
             - Num. of tickets: <b>${newOrder.numTicket}</b></br>
             - Airline: <b>${newOrder.airline}</b></br>
             - Path: <b>${newOrder.dest}</b></br>
-            - Date: <b>${newOrder.date}</b></br>
+            - Date: <b>${newOrder.actualDate}</b></br>
             - Price: <b>$${newOrder.price}</b></br>
             `
           );
@@ -576,14 +582,14 @@ DOM_sortDate.addEventListener("click", (e) => {
   e.preventDefault();
   if (sortDateOrder) {
     CurrentSearch.sort((a, b) => {
-      const tmp = new Date(b.date) - new Date(a.date);
+      const tmp = new Date(b.actualDate) - new Date(a.actualDate);
       if (tmp <= 0) return 1;
       if (tmp > 0) return -1;
     });
     DOM_sortDate.value = "↓ Sort by date";
   } else {
     CurrentSearch.sort((a, b) => {
-      const tmp = new Date(b.date) - new Date(a.date);
+      const tmp = new Date(b.actualDate) - new Date(a.actualDate);
       if (tmp > 0) return 1;
       if (tmp <= 0) return -1;
     });
