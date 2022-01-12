@@ -303,9 +303,10 @@ input[type="submit"] {
 
 /* search and sort */
 .main-search {
+  position: relative;
   display: grid;
-  grid-template-columns: 0.2fr 1fr 0.2fr 1fr 1fr;
-  gap: 5px;
+  grid-template-columns: 10% 24% 5% 24% 1% 30%;
+  gap: 1%;
   align-items: center;
 }
 
@@ -319,8 +320,8 @@ input[type="submit"] {
 
 #main-sort {
   display: grid;
-  grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
-  gap: 5px;
+  grid-template-columns: 24% 24% 24% 24%;
+  gap: 1%;
   margin-top: 5px;
 }
 
@@ -444,7 +445,12 @@ input[type="submit"] {
 }
 
 @media only screen and (max-width: 800px) {
-  .main-search {
-    display: inline;
+  .main-search,
+  #main-sort {
+    grid-template-columns: 49% 49%;
+  }
+
+  #main-sort input[type="submit"] {
+    height: 25px;
   }
 }
