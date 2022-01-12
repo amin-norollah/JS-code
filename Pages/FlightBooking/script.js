@@ -505,7 +505,7 @@ DOM_MainDate.innerHTML = new Date().toLocaleDateString("en-us", {
 //sort
 let sortPriceOrder = false;
 let sortCitiesOrder = false;
-let sortAirlinesOrder = false;
+let sortAirlinesOrder = true;
 let sortDateOrder = false;
 DOM_sortPrice.addEventListener("click", (e) => {
   e.preventDefault();
@@ -560,14 +560,14 @@ DOM_sortAirlines.addEventListener("click", (e) => {
 
   if (sortAirlinesOrder) {
     CurrentSearch.sort((a, b) => {
-      if (a.airline <= b.airline) return 1;
-      if (a.airline > b.airline) return -1;
+      if (a.airline.name > b.airline.name) return 1;
+      if (a.airline.name <= b.airline.name) return -1;
     });
     DOM_sortAirlines.value = "↓ Sort by airlines";
   } else {
     CurrentSearch.sort((a, b) => {
-      if (a.airline > b.airline) return 1;
-      if (a.airline <= b.airline) return -1;
+      if (a.airline.name <= b.airline.name) return 1;
+      if (a.airline.name > b.airline.name) return -1;
     });
     DOM_sortAirlines.value = "↑ Sort by airlines";
   }
