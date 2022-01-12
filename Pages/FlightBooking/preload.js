@@ -21,3 +21,4 @@ function preloadImages(array) {
   }
 }
 preloadImages(Array.from({ length: 8 }, (_, i) => `img/al_${i + 1}.png`));
+preloadImages("img/plane.png", "img/cloud-pattern.png");
