@@ -168,7 +168,7 @@ DOM_btnSearch.addEventListener("click", () => {
   if (TimeSpan >= 0) {
     const numDays = Math.floor(TimeSpan / (1000 * 60 * 60 * 24)) + 1;
     SearchEngine(from, numDays <= 30 ? numDays : 30);
-    DisplayUpdate(8, 1);
+    DisplayUpdate(12, 1);
   }
 });
 
@@ -241,9 +241,9 @@ const SearchEngine = function (startDate, numDays) {
     });
   }
 
-  totalSearchPages = Math.ceil(CurrentSearch.length / 8);
+  totalSearchPages = Math.ceil(CurrentSearch.length / 12);
 
-  DisplayUpdate(8, 1);
+  DisplayUpdate(12, 1);
 };
 
 const CalculatePrice = function (basePrice, factor, diffLevel, numOrder) {
@@ -528,7 +528,7 @@ DOM_sortPrice.addEventListener("click", (e) => {
   sortPriceOrder = !sortPriceOrder;
 
   //update search results
-  DisplayUpdate(8, 1);
+  DisplayUpdate(12, 1);
 });
 DOM_sortCity.addEventListener("click", (e) => {
   e.preventDefault();
@@ -552,7 +552,7 @@ DOM_sortCity.addEventListener("click", (e) => {
   sortCitiesOrder = !sortCitiesOrder;
 
   //update search results
-  DisplayUpdate(8, 1);
+  DisplayUpdate(12, 1);
 });
 
 DOM_sortAirlines.addEventListener("click", (e) => {
@@ -576,7 +576,7 @@ DOM_sortAirlines.addEventListener("click", (e) => {
   sortAirlinesOrder = !sortAirlinesOrder;
 
   //update search results
-  DisplayUpdate(8, 1);
+  DisplayUpdate(12, 1);
 });
 DOM_sortDate.addEventListener("click", (e) => {
   e.preventDefault();
@@ -600,5 +600,5 @@ DOM_sortDate.addEventListener("click", (e) => {
   sortDateOrder = !sortDateOrder;
 
   //update search results
-  DisplayUpdate(8, 1);
+  DisplayUpdate(12, 1);
 });
