@@ -322,7 +322,7 @@ input[type="submit"] {
   display: grid;
   grid-template-columns: 24% 24% 24% 24%;
   gap: 1%;
-  margin-top: 5px;
+  margin-top: 1%;
 }
 
 #main-sort input[type="submit"] {
