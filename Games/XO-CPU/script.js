@@ -18,10 +18,11 @@ const DisplayMainElements = function () {
             src="img/empty.png"
             width="60"
             height="60"
+            data-index ="${i}"
             ></image>
         </div>`;
 
-    mainContainer.insertAdjacentHTML("afterbegin", tmp);
+    mainContainer.insertAdjacentHTML("beforeend", tmp);
   }
 };
 DisplayMainElements();
@@ -64,13 +65,7 @@ const switchPlayers = function () {
     GameData[0].isPlay,
   ];
 
-  GameData[1].isPlay && setTimeout(CPUmove, 500);
-};
-
-const EventClickCell = function (cur, index) {
-  return (e) => {
-    if (AvailableCells[index] && GameData[0].isPlay) PlayOneStep(cur, index);
-  };
+  GameData[1].isPlay && setTimeout(CPUmove, 650);
 };
 
 const PlayOneStep = function (cur, index) {
@@ -205,9 +200,16 @@ scoreItems[0].style.opacity = 100;
 DisplayUpdateAndReset();
 
 //event handlers
-mainCells.forEach((cur, i) => {
-  cur.addEventListener("click", EventClickCell(cur, i));
+mainContainer.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (e.target.className === "images") {
+    const index = e.target.dataset.index;
+    if (AvailableCells[index] && GameData[0].isPlay)
+      PlayOneStep(e.target, index);
+  }
 });
+
 mainContainer.addEventListener("contextmenu", (event) =>
   event.preventDefault()
 );
