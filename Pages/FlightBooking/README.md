@@ -10,7 +10,7 @@ First of all, it is worthy to note that this page is working alone, so it should
 
 <img src="docs/docs_1.jpg" alt="flight booking demo image 1">
 
-Please consider that you are not allowed to generate data for more than a month, and it is because I prefer to show some features of JS code and not to cope with a computation process. However, it depends on you, and if you want you can increase this limit.
+Please consider that this project can only generate data for less than three months, and it is because I want to show some features of JS code instead of handling a computation process. However, the code is fully optimize, and if you want you can increase this limit.
 
 From the menu part of the project, users can request money (suppose you want to increase your account balance by redirecting to the bank page), and also users have the power to remove their tickets via the "Order management" section.
 

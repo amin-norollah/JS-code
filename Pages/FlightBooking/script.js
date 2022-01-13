@@ -170,7 +170,7 @@ DOM_btnSearch.addEventListener("click", () => {
 
   if (TimeSpan >= 0) {
     const numDays = Math.floor(TimeSpan / (1000 * 60 * 60 * 24)) + 1;
-    SearchEngine(from, numDays <= 30 ? numDays : 30);
+    SearchEngine(from, numDays <= 90 ? numDays : 90);
     DisplayUpdate(12, 1);
   }
 });
