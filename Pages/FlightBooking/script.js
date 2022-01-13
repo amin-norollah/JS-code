@@ -334,12 +334,13 @@ const DisplayUpdate = function (NumDisplay, iteration) {
 //when we want to increase the number of orders, we need to update the number of orders in "CurrentSearch" object and total price.
 const EventSearchItem = function () {
   document.querySelectorAll("#search-item-num").forEach((item) =>
-    item.addEventListener("click", () => {
+    item.addEventListener("input", () => {
       //update with new data
       const findItem = CurrentSearch.find(
         (element) => element.id === +item.name
       );
-      findItem.numOrder = +item.value;
+      const newNum = +item.value;
+      findItem.numOrder = newNum < 0 ? 0 : newNum > 10 ? 10 : newNum;
       findItem.price = CalculatePrice(
         MainData.basePrice,
         findItem.airline.factor,
@@ -348,7 +349,7 @@ const EventSearchItem = function () {
       );
       document.querySelector(
         `#search-item-price-${findItem.id}`
-      ).innerHTML = `$${findItem.price}`;
+      ).innerHTML = `$${new Intl.NumberFormat("en-US").format(findItem.price)}`;
     })
   );
 
