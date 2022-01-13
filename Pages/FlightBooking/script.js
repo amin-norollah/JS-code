@@ -325,92 +325,6 @@ const DisplayUpdate = function (NumDisplay, iteration) {
       currentSearchPages++;
       DisplayUpdate(NumDisplay, currentSearchPages);
     });
-
-  //event handelers for page changing
-  EventSearchItem();
-};
-
-///////////////////////////////////////////////////
-//when we want to increase the number of orders, we need to update the number of orders in "CurrentSearch" object and total price.
-const EventSearchItem = function () {
-  document.querySelectorAll("#search-item-num").forEach((item) =>
-    item.addEventListener("input", () => {
-      //update with new data
-      const findItem = CurrentSearch.find(
-        (element) => element.id === +item.name
-      );
-      const newNum = +item.value;
-      findItem.numOrder = newNum < 0 ? 0 : newNum > 10 ? 10 : newNum;
-      findItem.price = CalculatePrice(
-        MainData.basePrice,
-        findItem.airline.factor,
-        findItem.diffLevel,
-        findItem.numOrder
-      );
-      document.querySelector(
-        `#search-item-price-${findItem.id}`
-      ).innerHTML = `$${new Intl.NumberFormat("en-US").format(findItem.price)}`;
-    })
-  );
-
-  //click on order button
-  document.querySelectorAll("#search-item-order").forEach((item) =>
-    item.addEventListener("click", () => {
-      //update with new data
-      const findItem = CurrentSearch.find(
-        (element) => element.id === +item.name
-      );
-      const CurrentPrice = +parseLocaleNumber(
-        document
-          .querySelector(`#search-item-price-${findItem.id}`)
-          .innerHTML.slice(1),
-        "en"
-      );
-
-      if (userData.orders.length < userData.maxOrder) {
-        if (userData.balance >= CurrentPrice) {
-          //have enough money
-          userData.balance -= CurrentPrice;
-          const newOrder = {
-            number: String(Math.floor(Math.random() * 9000000)).padStart(7, 0),
-            airline: findItem.airline.name,
-            dest: findItem.path,
-            date: findItem.actualDate,
-            price: CurrentPrice,
-            numTicket: findItem.numOrder,
-          };
-          userData.orders.push(newOrder);
-          AlertModal(
-            "Successful operation!",
-            `Your order has been successfully submitted.</br>
-            Ticket information:</br>
-            - Order number: <b>${newOrder.number}</b></br>
-            - Num. of tickets: <b>${newOrder.numTicket}</b></br>
-            - Airline: <b>${newOrder.airline}</b></br>
-            - Path: <b>${newOrder.dest}</b></br>
-            - Flight date: <b>${newOrder.date}</b></br>
-            - Price: <b>$${newOrder.price}</b></br>
-            `
-          );
-          OrderManagementUpdate();
-        } else {
-          //you are not allowed to order this item
-          AlertModal(
-            "Failed operation!",
-            "You do not have enough money to order."
-          );
-        }
-      } else {
-        //You have reached the maximum number of orders.
-        AlertModal(
-          "Failed operation!",
-          "You have reached the maximum number of orders."
-        );
-      }
-
-      UpdateUserData();
-    })
-  );
 };
 
 ///////////////////////////////////////////////////
@@ -464,6 +378,88 @@ const OrderManagementUpdate = function () {
 
 ///////////////////////////////////////////////////
 //Other event handelers
+//when we want to increase the number of orders, we need to update the number of orders in "CurrentSearch" object and total price.
+DOM_Generate_searchItems.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  //////////////////////////////////////////
+  // for "Order numbers"
+  if (e.target.id === "search-item-num") {
+    //update with new data
+    const findItem = CurrentSearch.find(
+      (element) => element.id === +e.target.name
+    );
+    const newNum = +e.target.value;
+    findItem.numOrder = newNum < 0 ? 0 : newNum > 10 ? 10 : newNum;
+    findItem.price = CalculatePrice(
+      MainData.basePrice,
+      findItem.airline.factor,
+      findItem.diffLevel,
+      findItem.numOrder
+    );
+    document.querySelector(
+      `#search-item-price-${findItem.id}`
+    ).innerHTML = `$${new Intl.NumberFormat("en-US").format(findItem.price)}`;
+  }
+
+  //////////////////////////////////////////
+  // for "Order button"
+  if (e.target.id === "search-item-order") {
+    //update with new data
+    const findItem = CurrentSearch.find(
+      (element) => element.id === +e.target.name
+    );
+    const CurrentPrice = +parseLocaleNumber(
+      document
+        .querySelector(`#search-item-price-${findItem.id}`)
+        .innerHTML.slice(1),
+      "en"
+    );
+
+    if (userData.orders.length < userData.maxOrder) {
+      if (userData.balance >= CurrentPrice) {
+        //have enough money
+        userData.balance -= CurrentPrice;
+        const newOrder = {
+          number: String(Math.floor(Math.random() * 9000000)).padStart(7, 0),
+          airline: findItem.airline.name,
+          dest: findItem.path,
+          date: findItem.actualDate,
+          price: CurrentPrice,
+          numTicket: findItem.numOrder,
+        };
+        userData.orders.push(newOrder);
+        AlertModal(
+          "Successful operation!",
+          `Your order has been successfully submitted.</br>
+                Ticket information:</br>
+                - Order number: <b>${newOrder.number}</b></br>
+                - Num. of tickets: <b>${newOrder.numTicket}</b></br>
+                - Airline: <b>${newOrder.airline}</b></br>
+                - Path: <b>${newOrder.dest}</b></br>
+                - Flight date: <b>${newOrder.date}</b></br>
+                - Price: <b>$${newOrder.price}</b></br>
+                `
+        );
+        OrderManagementUpdate();
+      } else {
+        //you are not allowed to order this item
+        AlertModal(
+          "Failed operation!",
+          "You do not have enough money to order."
+        );
+      }
+    } else {
+      //You have reached the maximum number of orders.
+      AlertModal(
+        "Failed operation!",
+        "You have reached the maximum number of orders."
+      );
+    }
+    UpdateUserData();
+  }
+});
+
 DOM_btnRemove.addEventListener("click", () => {
   document.querySelectorAll("#ordered-check")?.forEach((item) => {
     if (item.checked) {
