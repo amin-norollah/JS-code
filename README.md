@@ -24,6 +24,8 @@ The following is a list of projects that I developed:
 
 and you can access the source codes from [this link](https://github.com/amin-norollah/JS-code).
 
+> Get in touch with me by [a.norollah.official@gmail.com](mailto:a.norollah.official@gmail.com)
+
 ## Licence
 
 JS-code is licensed under the [MIT license](https://opensource.org/licenses/MIT).
