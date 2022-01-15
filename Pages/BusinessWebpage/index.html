@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business webpage</title>
+
+    <link rel="shortcut icon" type="image/png" href="img/logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Mate+SC"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Arima+Madurai"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Dancing+Script"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <link href="toggleSwitch.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <!-- section social -->
+      <section class="section-social" id="section--0">
+        <div class="social-logo">
+          <img src="img/logo.png" width="50px" height="60px" />
+        </div>
+        <div class="social-item">
+          <a style="font-size: 2em">
+            <i class="fa fa-phone"></i>
+          </a>
+          <div>
+            <h4>+(334) 334 445</h4>
+            <h5>Toll free</h5>
+          </div>
+        </div>
+        <div class="social-item">
+          <a style="font-size: 2em">
+            <i class="fa fa-location-arrow"></i>
+          </a>
+          <div>
+            <h4>San Francisco</h4>
+            <h5>Fake st., CA</h5>
+          </div>
+        </div>
+        <div class="social-item">
+          <a style="font-size: 2em">
+            <i class="fa fa-instagram"></i>
+          </a>
+          <div>
+            <h4>Instagram</h4>
+            <h5>#balrug</h5>
+          </div>
+        </div>
+      </section>
+      <!-- navigation section  -->
+      <nav class="nav">
+        <div class="nav-container">
+          <div class="nav-theme">
+            <p style="margin-right: 5px">Theme: </label>
+            <label class="switch">
+              <input id="btn-theme" type="checkbox" checked="false" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="nav-items" id="myTopnav">
+            <a id="nav-item" href="#section--0">Home</a>
+            <a id="nav-item" href="#section--1">Operation</a>
+            <a id="nav-item" href="#section--2">Products</a>
+            <a id="nav-item" href="#section--3">Team</a>
+            <a id="nav-item" href="#section--4">Testimonial</a>
+            <input id="btn-login" type="submit" value="Login / Sign up"/>
+            <a class="icon-responsive">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <!-- Header section -->
+      <section class="section-header">
+        <div class="header-main limit-size">
+          <h1>Be Part of Business</h1>
+          <h5 style="margin-left: 35px">
+            You press the succeed, we do the rest...
+          </h5>
+          <h3 style="margin-top: 30px;">Come to Business, and Let's Get It Done.</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          <input id="btn-learn-more" type="submit" value="Learn more ↓" />
+          <img src="img/header.png" />
+        </div>
+      </section>
+    </header>
+    <!-- Tabs section -->
+    <section class="section-tabs" id="section--1">
+      <h5>Operation</h5>
+      <h2>All You Need is a Strategy and a Dream!</h2>
+      <div class="tabs-container limit-size">
+        <div class="tabs-items">
+          <input class="tabs-item tabs-item-selected" data-tab="tab-1" type="submit" value="Idea" />
+          <input class="tabs-item" data-tab="tab-2" type="submit" value="Strategy" />
+          <input class="tabs-item" data-tab="tab-3" type="submit" value="Success" />
+        </div>
+        <div class="tabs-content" id="tab-1">
+          <i
+            class="fa fa-diamond fa-10x"
+            style="display: flex; align-items: center; font-size: 5em"
+          ></i>
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+        <div class="tabs-content tabs-content-hidden" id="tab-2">
+          <i
+            class="fa fa-desktop fa-10x"
+            style="display: flex; align-items: center; font-size: 5em"
+          ></i>
+          <p>
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+        <div class="tabs-content tabs-content-hidden" id="tab-3">
+          <i
+            class="fa fa-rocket fa-10x"
+            style="display: flex; align-items: center; font-size: 5em"
+          ></i>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Highlight section -->
+    <section class="section-highlight">
+      <div class="highlight-content limit-size">
+        <div>
+          <h1>20</h1>
+          <h5>Number of Products</h5>
+        </div>
+        <div>
+          <h1>7000+</h1>
+          <h5>Customers Satisfied</h5>
+        </div>
+        <div>
+          <h1>120</h1>
+          <h5>Number of Staffs</h5>
+        </div>
+        <div>
+          <h1>52</h1>
+          <h5>International Partners</h5>
+        </div>
+      </div>
+    </section>
+    <!-- Shopping section -->
+    <section class="section-shopping limit-size" id="section--2">
+      <h5>Out Products</h5>
+      <h2>What More Could You Want?</h2>
+      <div class="shopping-container">
+        <!-- shopping item 1 -->
+        <div class="shopping-item">
+          <img src="img/shopping-item.png" />
+          <div>
+            <p>Lorem ipsum dolor sit amet...</p>
+            <i class="fa fa-location-arrow"> Houston-Texas</i>
+            <i class="fa fa-calendar"> Sep. 01 - Oct. 10</i>
+            <input type="submit" value="$550" />
+          </div>
+        </div>
+        <!-- shopping item 2 -->
+        <div class="shopping-item">
+          <img src="img/shopping-item.png" />
+          <div>
+            <p>Lorem ipsum dolor sit amet...</p>
+            <i class="fa fa-location-arrow"> Autin-Texas</i>
+            <i class="fa fa-calendar"> Aug. 02 - Sep. 16</i>
+            <input type="submit" value="$450" />
+          </div>
+        </div>
+        <!-- shopping item 3 -->
+        <div class="shopping-item">
+          <img src="img/shopping-item.png" />
+          <div>
+            <p>Lorem ipsum dolor sit amet...</p>
+            <i class="fa fa-location-arrow"> Irvine-California</i>
+            <i class="fa fa-calendar"> Feb. 11 - Apr. 20</i>
+            <input type="submit" value="$350" />
+          </div>
+        </div>
+        <!-- shopping item 4 -->
+        <div class="shopping-item">
+          <img src="img/shopping-item.png" />
+          <div>
+            <p>Lorem ipsum dolor sit amet...</p>
+            <i class="fa fa-location-arrow"> Houston-Texas</i>
+            <i class="fa fa-calendar"> Nov. 01 - Dec. 17</i>
+            <input type="submit" value="$750" />
+          </div>
+        </div>
+        <!-- shopping item 5 -->
+        <div class="shopping-item">
+          <img src="img/shopping-item.png" />
+          <div>
+            <p>Lorem ipsum dolor sit amet...</p>
+            <i class="fa fa-location-arrow"> Irvine-California</i>
+            <i class="fa fa-calendar"> Sep. 01 - Nov. 02</i>
+            <input type="submit" value="$650" />
+          </div>
+        </div>
+        <!-- shopping item 6 -->
+        <div class="shopping-item">
+          <img src="img/shopping-item.png" />
+          <div>
+            <p>Lorem ipsum dolor sit amet...</p>
+            <i class="fa fa-location-arrow"> Houston-Texas</i>
+            <i class="fa fa-calendar"> Feb. 21 - Apr. 25</i>
+            <input type="submit" value="$550" />
+          </div>
+        </div>
+        <!-- shopping item 7 -->
+        <div class="shopping-item">
+          <img src="img/shopping-item.png" />
+          <div>
+            <p>Lorem ipsum dolor sit amet...</p>
+            <i class="fa fa-location-arrow"> Irvine-California</i>
+            <i class="fa fa-calendar"> Sep. 05 - Oct. 07</i>
+            <input type="submit" value="$450" />
+          </div>
+        </div>
+        <!-- shopping item 8 -->
+        <div class="shopping-item">
+          <img src="img/shopping-item.png" />
+          <div>
+            <p>Lorem ipsum dolor sit amet...</p>
+            <i class="fa fa-location-arrow"> Houston-Texas</i>
+            <i class="fa fa-calendar"> Oct. 10 - Oct. 28</i>
+            <input type="submit" value="$650" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Highlight section -->
+    <section class="section-highlight" id="section--3">
+      <h1>Our team</h1>
+      <div class="highlight-content limit-size">
+        <div>
+          <img src="img/team.png" />
+          <h5>Michael Craig</h5>
+        </div>
+        <div>
+          <img src="img/team.png" />
+          <h5>Michael Craig</h5>
+        </div>
+        <div>
+          <img src="img/team.png" />
+          <h5>Michael Craig</h5>
+        </div>
+        <div>
+          <img src="img/team.png" />
+          <h5>Michael Craig</h5>
+        </div>
+      </div>
+    </section>
+    <!-- Slider section -->
+    <section class="section-slider limit-size" id="section--4">
+      <h5>Testimonial</h5>
+      <h2>What Customer Saying...</h2>
+      <div class="slider-container">
+        <!-- slider item 1 -->
+        <div class="slider-item">
+          <i class="fa fa-quote-left"></i>
+          <h2>Always the real thing, always order.</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo
+            minima qui dolor, iusto iure.
+          </p>
+          <i class="fa fa-quote-right" style="float: right"></i>
+          <h5>-Jack Neilson</h5>
+        </div>
+        <!-- slider item 2 -->
+        <div class="slider-item">
+          <i class="fa fa-quote-left"></i>
+          <h2>Have you forgotten how good suceess tastes?</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo
+            minima qui dolor, iusto iure.
+          </p>
+          <i class="fa fa-quote-right" style="float: right"></i>
+          <h5>-Melody Barbarian</h5>
+        </div>
+        <!-- slider item 3 -->
+        <div class="slider-item">
+          <i class="fa fa-quote-left"></i>
+          <h2>You can on a success, can do!</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo
+            minima qui dolor, iusto iure.
+          </p>
+          <i class="fa fa-quote-right" style="float: right"></i>
+          <h5>-David Jackson</h5>
+        </div>
+        <!-- slider item 4 -->
+        <div class="slider-item">
+          <i class="fa fa-quote-left"></i>
+          <h2>Share moments, share success.</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo
+            minima qui dolor, iusto iure.
+          </p>
+          <i class="fa fa-quote-right" style="float: right"></i>
+          <h5>-Matthew Alves</h5>
+        </div>
+        <button class="slider-btn--left">&larr;</button>
+        <button class="slider-btn--right">&rarr;</button>
+      </div>
+    </section>
+    <!-- footer section -->
+    <footer>
+      <div class="footer limit-size">
+        <section>
+          <img
+            src="img/logo.png"
+            width="100px"
+            height="119px"
+            style="display: block; margin-left: auto; margin-right: auto"
+          />
+          <h3 style="text-align: center">Business plan</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo
+            minima qui dolor, iusto iure.
+          </p>
+        </section>
+        <section>
+          <h4>Our company</h4>
+          <a href="#">About</a>
+          <a href="#">News</a>
+          <a href="#">Services</a>
+          <a href="#">Our Team</a>
+          <a href="#">Careers</a>
+        </section>
+        <section>
+          <h4>Our Services</h4>
+          <a href="#">Industrial</a>
+          <a href="#">Construction</a>
+          <a href="#">Remodeling</a>
+        </section>
+        <section>
+          <h4>Contact</h4>
+          <a href="#">Help Center</a>
+          <a href="#">Support Community</a>
+          <a href="#">Press</a>
+          <a href="#">FAQ</a>
+          <a href="#">Our Partners</a>
+        </section>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
