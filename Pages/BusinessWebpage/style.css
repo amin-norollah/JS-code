@@ -104,7 +104,7 @@ p{
   margin: auto;
 
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 40% 20% 20% 20%;
   gap: 1%;
   align-items: center;
 
@@ -136,9 +136,13 @@ p{
 .nav {
   background-color: var(--color-background-1);
   font-family: var(--font-main);
-  font-size: 1.1em;
+  position: absolute;
+  width: 100%;
+  
   overflow: hidden;
+  z-index: 5;
   transition: all 0.3s;
+  
 }
 
 .nav-container {
@@ -267,7 +271,7 @@ p{
 
 /* tabs */
 .section-tabs{
-  padding: 100px 0;
+  padding: 60px 0;
   transition: all 0.3s;
 }
 
@@ -327,6 +331,7 @@ p{
 }
 
 .section-highlight h1{
+  margin-top: 40px;
   color: var(--color-font-2);
   text-align: center;
 }
@@ -351,7 +356,7 @@ p{
 /* shopping */
 .section-shopping{
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 60px 0;
 }
 
 .section-shopping h2, .section-shopping h5{
@@ -394,7 +399,7 @@ p{
 /* slider */
 .section-slider{
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 60px 0;
 }
 
 .slider-container{

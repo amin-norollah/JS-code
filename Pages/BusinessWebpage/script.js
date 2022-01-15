@@ -88,7 +88,6 @@ DOM_btnLearnMore.addEventListener("click", () => {
 });
 
 //sticky navigation
-
 const menuObserverCallback = function (entries) {
   const [entry] = entries;
 
