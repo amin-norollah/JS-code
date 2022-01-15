@@ -122,7 +122,7 @@ const RootUpdateProperty = function (from, to) {
 const menuObserver = new IntersectionObserver(menuObserverCallback, {
   root: null,
   threshold: 0,
-  rootMargin: "-200px",
+  rootMargin: `-${DOM_nav.getBoundingClientRect().height}px`,
 });
 
 menuObserver.observe(DOM_sectionHeader);
