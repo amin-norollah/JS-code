@@ -217,6 +217,10 @@ p{
     float: right;
     display: block;
   }
+
+  .limit-size{
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -488,6 +492,15 @@ section{
   }
   .slider-container{
     height: 330px;
+  }
+
+  .slider-item{
+    padding: 0 10px;
+  }
+
+  .slider-btn--left,
+  .slider-btn--right{
+    margin-top: 50%;
   }
 }
 /***************************************************/
