@@ -195,9 +195,6 @@ p{
 }
 
 @media screen and (max-width: 600px) {
-  .section-social{
-    display: none;
-  }
   .nav-container {
     grid-template-columns: auto 30%;
   }
@@ -218,6 +215,11 @@ p{
     display: block;
   }
 
+  /* others */
+  .section-social{
+    display: none;
+  }
+  
   .limit-size{
     width: 90%;
   }
@@ -479,6 +481,10 @@ section{
 }
 
 @media screen and (max-width: 600px) {
+  .header-main h1{
+    font-size: 2.2em;
+  }
+
   .highlight-content,
   .shopping-container{
     grid-template-columns: 49% 49%;
