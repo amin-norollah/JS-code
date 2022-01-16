@@ -100,16 +100,21 @@ p{
 /***************************************************/
 /* social */
 .section-social{
-  width: 95%;
-  margin: auto;
-
   display: grid;
   grid-template-columns: 38% 20% 20% 20%;
   gap: 5px;
   align-items: center;
 
+  width: 95%;
+  margin: auto;
   max-width: var(--size-max);
   min-width: var(--size-min);
+}
+
+.section-social-background{
+  background-image: url("img/pattern-2.png");
+  background-repeat:repeat;
+  background-attachment: fixed;
 }
 
 .social-logo img {
@@ -352,7 +357,6 @@ section{
 /* highlight */
 .section-highlight{
   background-image: url("img/pattern-1.png");
-  background-position: center center;
   background-repeat:repeat;
   background-attachment: fixed;
   padding: 5px;
@@ -361,13 +365,13 @@ section{
 }
 
 .section-highlight h1{
-  margin-top: 40px;
+  margin-top: 30px;
   color: var(--color-font-2);
   text-align: center;
 }
 
 .highlight-content{
-  margin: 8% auto;
+  margin: 5% auto;
 
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -400,7 +404,7 @@ section{
 .shopping-container{
   display: grid;
   grid-template-columns: 24% 24% 24% 24%;
-  column-gap: 1%;
+  column-gap: 2%;
   row-gap: 10px;
 
   margin-top: 10px;
@@ -498,7 +502,8 @@ section{
 
   .highlight-content,
   .shopping-container{
-    grid-template-columns: 49% 49%;
+    grid-template-columns: 48% 48%;
+    column-gap: 4%;
   }
   .header-main{
     display: block;
