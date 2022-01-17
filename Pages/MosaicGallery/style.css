@@ -115,7 +115,7 @@ footer {
   right: 0px;
 
   font-family: "Metal", "Times New Roman", Times, serif;
-  font-size: 3vh;
+  font-size: 14px;
   color: var(--color-font);
   text-align: center;
 }
@@ -157,7 +157,7 @@ footer a:hover {
 
 .modal-main img {
   border-radius: 10px;
-  border: 2px solid var(--color-font);
+  border: 2px solid var(--color-font-hover);
   margin: 0;
   padding: 2px;
 
