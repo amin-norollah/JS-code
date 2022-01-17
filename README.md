@@ -20,7 +20,8 @@ The following is a list of projects that I developed:
 (Pages)
 
 - [Flight booking demo](https://amin-norollah.github.io/JS-code/Pages/FlightBooking/): a responsive web page to search, book and manage international flight tickets ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/FlightBooking)).
-- [Business webpage demo](https://amin-norollah.github.io/JS-code/Pages/BusinessWebpage/): a clasical web page suitable for business plans. It is responsive and has a bunch of visual effects, such as a theme changer. It is worthy to note that all effects have been implemented manually, which increases performance. ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/BusinessWebpage)).
+- [Business webpage demo](https://amin-norollah.github.io/JS-code/Pages/BusinessWebpage/): a classical web page suitable for business plans. It is responsive and has a bunch of visual effects, such as a theme changer. It is worthy to note that all effects have been implemented manually, which increases performance ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/BusinessWebpage)).
+- [Mosaic art gallery demo](https://amin-norollah.github.io/JS-code/Pages/MosaicGallery/): this image photo gallery is fully responsive, uses a new JS code to make much more interesting image grids, and adapts to the browser using a nice and smooth animation ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/MosaicGallery)).
 - (in process)
 
 Moreover, you can access the source codes from [this link](https://github.com/amin-norollah/JS-code).

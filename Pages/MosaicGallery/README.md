@@ -10,11 +10,12 @@ You can follow the demo version of the project from the below link:
 
 This project is totally written with JS, CSS and HTML. I used CSS and JS for implementing all effects, which have enhanced the performance. Some of the features of the mosaic art gallery are as follows:
 
-- Generating photo album according to the existing images,
-- Changing background and font colors in real-time,
-- Using lazy loading images which allows the user to see the small blurred image before the image is fully loaded,
-- Fully responsive,
-- CSS effects.
+- Generating photo album according to the existing images
+- Changing background and font colors in real-time
+- Adjust margin between images
+- Using lazy loading images which allows the user to see the small blurred image before the image is fully loaded
+- Responsive
+- CSS effects
 
 I tried to make the page look attractive to the user. Feel free to contact me if you have any comments or questions.
 
