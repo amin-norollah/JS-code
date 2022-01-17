@@ -33,6 +33,7 @@
   box-sizing: border-box;
   transition: background-color 0.5s ease, color 0.5s linear;
 }
+
 body {
   color: var(--color-font-0);
   background-color: var(--color-background-0);
@@ -542,10 +543,6 @@ section{
 footer {
   color: var(--color-font-2);
   background-color: var(--color-background-2);
-  margin-bottom: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
 }
 
 .footer {
@@ -576,6 +573,23 @@ footer {
     color: var(--color-font-2);
     text-decoration: none;
 }
+
+.footer-copyWrite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  height: 3rem;
+  margin: 0;
+}
+
+.footer-copyWrite a,
+.footer-copyWrite p {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
+}
+
 
 @media screen and (max-width: 600px) {
     .footer {
