@@ -1,3 +1,10 @@
+/*
+ * Created by Amin Norollah
+ *
+ * For more information, see the following github page:
+ * https://amin-norollah.github.io/JS-code
+ */
+
 "use strict";
 
 ///////////////////////////////
