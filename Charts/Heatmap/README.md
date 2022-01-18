@@ -13,6 +13,7 @@ This project is totally written with JS, CSS and HTML. I used CSS and JS for imp
 
 Some of the features of the mosaic art gallery are as follows:
 
+- Without using any library
 - Dynamic HTML map creating
 - Resolution between 10x10 and 80x80 pixels (increasing the resolution more that 80x80 pixels could affect the performance. However, if you want you can change the limit in the script.js file)
 - Enhanced the output heatmap with the power of CSS blur effect

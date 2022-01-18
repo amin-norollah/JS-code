@@ -26,7 +26,7 @@ The following is a list of projects that I developed:
 
 (Charts)
 
-- [**_Heatmap demo_**](https://amin-norollah.github.io/JS-code/Charts/Heatmap/): a responsive and easy to use project for creating heatmap chart with the resolution between 10x10 and 80x80 pixels. Thanks to CSS blur effect, the smooth results could be generated with higher resolution that can increase the performance ([more information](https://github.com/amin-norollah/JS-code/tree/main/Charts/Heatmap)).
+- [**_Heatmap demo_**](https://amin-norollah.github.io/JS-code/Charts/Heatmap/): a responsive and easy to use project for creating heatmap chart with the resolution between 10x10 and 80x80 pixels. I should mention that I did not use any library for implementing it. Thanks to CSS blur effect, the smooth results could be generated with higher resolution that can increase the performance ([more information](https://github.com/amin-norollah/JS-code/tree/main/Charts/Heatmap)).
 - (in process)
 
 Moreover, you can access the source codes from [this link](https://github.com/amin-norollah/JS-code).
