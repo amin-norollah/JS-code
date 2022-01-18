@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-time Heatmap Chart</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Niconne"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Metal"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script defer src="data.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!------------>
+    <!-- header -->
+    <header>
+      <h1>Real-time Heatmap Chart</h1>
+      <h2>Fully Responsive Chart</h2>
+    </header>
+
+    <input
+      id="btn-menu"
+      type="submit"
+      value="☰ Menu"
+      style="position: absolute; top: 10px; left: 10px"
+    />
+
+    <!-------------->
+    <!-- side nav -->
+    <div class="side-nav">
+      <label class="side-nav-close-btn">&times;</label>
+
+      <fieldset>
+        <legend>Data Generator</legend>
+        <label id="label-rows" for="rows">Num. of rows (current: 40)</label>
+        <input
+          type="range"
+          id="input-rows"
+          name="rows"
+          min="10"
+          max="80"
+          value="40"
+        /><br />
+        <label id="label-columns" for="columns"
+          >Num. of columns (current: 40)</label
+        >
+        <input
+          type="range"
+          id="input-columns"
+          name="columns"
+          min="10"
+          max="80"
+          value="40"
+        /><br />
+        <label id="label-variation" for="variation"
+          >Variation (current: 1)</label
+        >
+        <input
+          type="range"
+          id="input-variation"
+          name="columns"
+          min="0"
+          max="10"
+          value="1"
+        /><br />
+        <input id="btn-generate" type="submit" value="Generate" />
+      </fieldset>
+      <fieldset>
+        <legend>Effects</legend>
+        <label id="label-blur" for="blur">Blur (current: 4)</label>
+        <input
+          type="range"
+          id="input-blur"
+          name="blur"
+          min="0"
+          max="15"
+          value="4"
+        /><br />
+      </fieldset>
+      <fieldset>
+        <legend>Edit Colors</legend>
+        <label for="Background-color">Background color:</label>
+        <input
+          id="input-b-color"
+          type="color"
+          value="#b7950b"
+          name="Background-color"
+        />
+        <label for="Font-color">Font color:</label>
+        <input
+          id="input-f-color"
+          type="color"
+          value="#504000"
+          name="Font-color"
+        />
+      </fieldset>
+    </div>
+
+    <!------------->
+    <!-- gallery -->
+    <div class="gallery-container">
+      <div class="gallery-margin">
+        <div class="gallery-items-l1"></div>
+      </div>
+    </div>
+
+    <!------------>
+    <!-- footer -->
+    <footer>
+      &copy; by Amin Norollah - Balrug.
+      <a href="https://amin-norollah.github.io/JS-code/">(source code)</a>
+    </footer>
+
+    <!------------>
+    <!-- modal -->
+    <div id="div-modal"></div>
+  </body>
+</html>
