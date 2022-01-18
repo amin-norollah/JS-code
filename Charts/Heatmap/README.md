@@ -7,9 +7,11 @@ Note that you can find some options to generate the different heatmap and test i
 
 ## Manual
 
-<img src="docs/docs_1.jpg" alt="Mosaic art gallery demo image 1">
+<img src="docs/docs_1.jpg" alt="hea demo image 1">
 
-This project is totally written with JS, CSS and HTML. I used CSS and JS for implementing all effects, which have enhanced the performance. Some of the features of the mosaic art gallery are as follows:
+This project is totally written with JS, CSS and HTML. I used CSS and JS for implementing all effects, which have enhanced the performance. you can easily generate smooth chart with the resolution of 60x60 and 3 pixels of blur effect.
+
+Some of the features of the mosaic art gallery are as follows:
 
 - Dynamic HTML map creating
 - Resolution between 10x10 and 80x80 pixels (increasing the resolution more that 80x80 pixels could affect the performance. However, if you want you can change the limit in the script.js file)
