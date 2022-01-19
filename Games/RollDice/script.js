@@ -58,32 +58,25 @@ function preloadImages(array) {
     img.src = array[i];
   }
 }
-preloadImages(Array.from({ length: 7 }, (_, i) => `img/dice-${i}.png`));
+preloadImages(Array.from({ length: 7 }, (_, i) => `img/dice-${i}.svg`));
 
-const action_reset = function () {
-  player1 = {
-    highScore: 0,
-    currentScore: 0,
-  };
+const resetPartial = function () {
+  player1.reset();
+  player2.reset();
 
-  player2 = {
-    highScore: 0,
-    currentScore: 0,
-  };
-
-  Switch();
-  Update();
+  SwitchPlayers();
+  RenderDisplay();
 };
 
-const action_resetGlobal = function () {
+const resetGlobal = function () {
   totalWinPlayer1.textContent = 0;
   totalWinPlayer2.textContent = 0;
-  action_reset();
+  resetPartial();
 };
 
-const action_roll = function () {
+const RollFunction = function () {
   const newDice = Math.ceil(Math.random() * 6);
-  image_dice.src = `img/dice-${newDice}.png`;
+  image_dice.src = `img/dice-${newDice}.svg`;
 
   if (newDice !== 1) {
     if (player1.isEnable) player1.currentScore += newDice;
@@ -92,16 +85,17 @@ const action_roll = function () {
       setTimeout(CPUgame, 1000);
     }
   } else {
-    action_hold(false);
+    HoldFunction(false);
   }
-  Update();
+  RenderDisplay();
 
+  //animation
   div_dice.classList.remove("dice-anim");
   void div_dice.offsetWidth;
   div_dice.classList.add("dice-anim");
 };
 
-const action_hold = function (condition) {
+const HoldFunction = function (condition) {
   if (player1.isEnable) {
     player1.highScore = condition
       ? player1.highScore + player1.currentScore
@@ -120,30 +114,30 @@ const action_hold = function (condition) {
   if (player1.highScore >= winScore) {
     alert("Player 1 win!");
     totalWinPlayer1.textContent = Number(totalWinPlayer1.textContent) + 1;
-    action_reset();
+    resetPartial();
   } else if (player2.highScore >= winScore) {
     alert("CPU win!");
     totalWinPlayer2.textContent = Number(totalWinPlayer2.textContent) + 1;
-    action_reset();
+    resetPartial();
   } else {
-    Switch();
-    Update();
+    SwitchPlayers();
+    RenderDisplay();
   }
 };
 
 const CPUgame = function () {
   if (player2.highScore + player2.currentScore < winScore)
     if (player1.highScore > player2.highScore) {
-      if (player2.currentScore < 14) action_roll();
-      else action_hold(true);
+      if (player2.currentScore < 14) RollFunction();
+      else HoldFunction(true);
     } else {
-      if (player2.currentScore < 9) action_roll();
-      else action_hold(true);
+      if (player2.currentScore < 9) RollFunction();
+      else HoldFunction(true);
     }
-  else action_hold(true);
+  else HoldFunction(true);
 };
 
-const Switch = function () {
+const SwitchPlayers = function () {
   if (player1.isEnable) {
     player1.isEnable = false;
     player2.isEnable = true;
@@ -161,7 +155,7 @@ const Switch = function () {
   }
 };
 
-const Update = function () {
+const RenderDisplay = function () {
   highScorePlayer1.textContent = `Score: ${String(player1.highScore).padStart(
     2,
     0
@@ -194,15 +188,6 @@ const Update = function () {
   btn_roll.classList.remove("btn-anim");
 };
 
-const action_info = function () {
-  container_information.classList.remove("hidden");
-  container_overlay.classList.remove("hidden");
-};
-const action_close = function () {
-  container_information.classList.add("hidden");
-  container_overlay.classList.add("hidden");
-};
-
 ///////////////////////////////
 //main
 const winScore = 50;
@@ -211,16 +196,35 @@ let player1 = {
   isEnable: true,
   highScore: 0,
   currentScore: 0,
+
+  reset() {
+    this.highScore = 0;
+    this.currentScore = 0;
+  },
 };
 
 let player2 = {
   isEnable: false,
   highScore: 0,
   currentScore: 0,
+
+  reset() {
+    this.highScore = 0;
+    this.currentScore = 0;
+  },
 };
 
-const eventReset = btn_reset.addEventListener("click", action_resetGlobal);
-const eventRollDice = btn_roll.addEventListener("click", action_roll);
-const eventHold = btn_hold.addEventListener("click", action_hold);
-const eventInfo = btn_info.addEventListener("click", action_info);
-const eventClose = btn_close.addEventListener("click", action_close);
+const eventReset = btn_reset.addEventListener("click", resetGlobal);
+const eventRollDice = btn_roll.addEventListener("click", RollFunction);
+const eventHold = btn_hold.addEventListener("click", HoldFunction);
+
+///////////////////////////////////
+//modal
+const eventInfo = btn_info.addEventListener("click", () => {
+  container_information.classList.remove("hidden");
+  container_overlay.classList.remove("hidden");
+});
+const eventClose = btn_close.addEventListener("click", () => {
+  container_information.classList.add("hidden");
+  container_overlay.classList.add("hidden");
+});

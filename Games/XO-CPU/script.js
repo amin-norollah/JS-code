@@ -6,61 +6,8 @@
  */
 
 "use strict";
-
-/////////////////////////////////////////
-//selectors and initialization
-const scorePlayer1 = document.querySelector("#score-player1");
-const scoreCPU = document.querySelector("#score-cpu");
-
-const mainContainer = document.querySelector(".main-container");
-const scoreItems = document.querySelectorAll(".score-item");
-
-const DisplayMainElements = function () {
-  mainContainer.innerHTML = "";
-  for (let i = 0; i < 9; i++) {
-    const tmp = `
-        <div class="main-item">
-            <image
-            class="images"
-            src="img/empty.png"
-            width="60"
-            height="60"
-            data-index ="${i}"
-            ></image>
-        </div>`;
-
-    mainContainer.insertAdjacentHTML("beforeend", tmp);
-  }
-};
-DisplayMainElements();
-
-const mainCells = document.querySelectorAll(".images");
-
-//cache images
-function preloadImages(array) {
-  if (!preloadImages.list) {
-    preloadImages.list = [];
-  }
-  const list = preloadImages.list;
-  for (let i = 0; i < array.length; i++) {
-    const img = new Image();
-    img.onload = function () {
-      const index = list.indexOf(this);
-      if (index !== -1) {
-        // remove image from the array once it's loaded
-        // for memory consumption reasons
-        list.splice(index, 1);
-      }
-    };
-    list.push(img);
-    img.src = array[i];
-  }
-}
-preloadImages(["img/empty.png", "img/select_cpu.png", "img/select_user.png"]);
-
 /////////////////////////////////////////
 //functions
-
 const switchPlayers = function () {
   [scoreItems[0].style.opacity, scoreItems[1].style.opacity] = [
     scoreItems[1].style.opacity,
@@ -78,10 +25,10 @@ const switchPlayers = function () {
 const PlayOneStep = function (cur, index) {
   if (cur === undefined || cur === null) cur = mainCells[index];
   if (GameData[0].isPlay) {
-    cur.src = "img/select_user.png";
+    cur.src = "img/select_user.svg";
     GameData[0].SelectedCell[index] = 1;
   } else {
-    cur.src = "img/select_cpu.png";
+    cur.src = "img/select_cpu.svg";
     GameData[1].SelectedCell[index] = 1;
   }
   AvailableCells[index] = 0;
@@ -105,11 +52,13 @@ const patternChecker = function (sc) {
 };
 
 const DisplayUpdateAndReset = function (index) {
-  if (isFinite(index)) GameData[index].score++;
+  //win score increases if player wins
+  isFinite(index) && GameData[index].score++;
+
   scorePlayer1.textContent = GameData[0].score;
   scoreCPU.textContent = GameData[1].score;
 
-  mainCells.forEach((cur) => (cur.src = "img/empty.png"));
+  mainCells.forEach((cur) => (cur.src = "img/empty.svg"));
 
   GameData[0].SelectedCell.fill(0);
   GameData[1].SelectedCell.fill(0);
@@ -117,7 +66,7 @@ const DisplayUpdateAndReset = function (index) {
 };
 
 const AutoReset = function () {
-  if (AvailableCells.reduce((acc, mov) => acc + mov) === 0)
+  AvailableCells.reduce((acc, mov) => acc + mov) === 0 &&
     setTimeout(DisplayUpdateAndReset, 100);
 };
 
@@ -133,10 +82,12 @@ const CPUmove = function () {
   } else if (myLevel > 0) {
     PlayOneStep(null, myIndex);
   } else if (AvailableCells.reduce((acc, mov) => acc + mov) !== 0) {
-    for (let i = 0; i < 9; i++) {
-      if (AvailableCells[i]) {
-        PlayOneStep(null, i);
-        break;
+    let select = false;
+    while (!select) {
+      const rnd = Math.floor(Math.random() * 9);
+      if (AvailableCells[rnd]) {
+        PlayOneStep(null, rnd);
+        select = true;
       }
     }
   } else {
