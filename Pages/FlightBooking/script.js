@@ -253,8 +253,6 @@ const SearchEngine = function (startDate, numDays) {
   }
 
   totalSearchPages = Math.ceil(CurrentSearch.length / 12);
-
-  DisplayUpdate(12, 1);
 };
 
 ///////////////////////////////////////////////////
@@ -624,6 +622,7 @@ DOM_sortDate.addEventListener("click", (e) => {
 ///////////////////////////////////////////////////
 //initialization
 SearchEngine(new Date(), 1);
+DisplayUpdate(12, 1);
 UpdateUserData();
 
 //todays date
