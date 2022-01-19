@@ -92,7 +92,7 @@ li {
   grid-area: header;
   padding-top: 25px;
   padding-bottom: 75px;
-  background-image: url("img/cloud-pattern.png"), url("img/plane.png");
+  background-image: url("img/cloud-pattern.png"), url("img/plane.svg");
   background-repeat: repeat-x, no-repeat;
   background-position: bottom, right;
 }
