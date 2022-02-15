@@ -8,10 +8,15 @@ viewBox="0 0 3442 3986"
  <defs>
   <style type="text/css">
    <![CDATA[
-    .fil0 {fill:url(#id0)}
+    .fil0 {fill:url(#id1); filter:url(#id0);}
    ]]>
   </style>
-  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="3112.65" y1="3198.48" x2="324.47" y2="794.18">
+  <filter id="id0" x="0" y="0" width="200%" height="200%">
+    <feOffset result="offOut" in="SourceAlpha" dx="50" dy="20" />
+    <feGaussianBlur result="blurOut" in="offOut" stdDeviation="25" />
+    <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+  </filter>
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="3112.65" y1="3198.48" x2="324.47" y2="794.18">
    <stop offset="0" style="stop-opacity:1; stop-color:#D89402"/>
    <stop offset="1" style="stop-opacity:1; stop-color:#FFE08A"/>
   </linearGradient>
