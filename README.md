@@ -6,15 +6,19 @@
   
 # Welcome to my open-source JS projects
 
-JavaScript is one of the core technologies of the web and is a powerful programming language that can be used to design many web pages, alongside HTML and CSS, and for that reason t is very attractive to me. I have designed this repository by the goal of sharing some interesting designs with others. I hope my projects could be helpful, and I am looking forward to give your feedback and experience as well.
+I am a NodeJs developer who designs API using the ExpressJS framework, besides I have a special interest in front-end design, and sometimes I design vanilla JS pages. Although I know how to design web pages using a ReactJS framework, I prefer to share my thoughts with vanilla JS on this page. I think it is much more fun and easier to understand and share.
 
-The following is a list of projects that I developed:
+I hope my projects could be helpful, and I am looking forward to give your feedback and experience as well.
+
+The following is a list of pages that I developed:
 
 ## 1. **Pages**
 
 - [**_Flight booking demo_**](https://amin-norollah.github.io/JS-code/Pages/FlightBooking/): a responsive web page to search, book and manage international flight tickets ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/FlightBooking)).
 - [**_Business webpage demo_**](https://amin-norollah.github.io/JS-code/Pages/BusinessWebpage/): a classical web page suitable for business plans. It is responsive and has a bunch of visual effects, such as a theme changer. It is worthy to note that all effects have been implemented manually, which increases performance ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/BusinessWebpage)).
 - [**_Mosaic art gallery demo_**](https://amin-norollah.github.io/JS-code/Pages/MosaicGallery/): this image photo gallery is fully responsive, uses a new JS code to make much more interesting image grids, and adapts to the browser using a nice and smooth animation ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/MosaicGallery)).
+- [**_Nastaligh (SVG art work)_**](https://amin-norollah.github.io/JS-code/Pages/Nastaligh/): it is interesting to work with SVG files and learn how to add some effects to those files. On this page, you can see I added gradient color and shadow to an SVG artwork, and it will change whenever the mouse hover or enter its area.
+
 - (in process)
 
 ## 2. **Charts**
