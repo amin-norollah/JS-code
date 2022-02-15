@@ -17,7 +17,7 @@ The following is a list of pages that I developed:
 - [**_Flight booking demo_**](https://amin-norollah.github.io/JS-code/Pages/FlightBooking/): a responsive web page to search, book and manage international flight tickets ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/FlightBooking)).
 - [**_Business webpage demo_**](https://amin-norollah.github.io/JS-code/Pages/BusinessWebpage/): a classical web page suitable for business plans. It is responsive and has a bunch of visual effects, such as a theme changer. It is worthy to note that all effects have been implemented manually, which increases performance ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/BusinessWebpage)).
 - [**_Mosaic art gallery demo_**](https://amin-norollah.github.io/JS-code/Pages/MosaicGallery/): this image photo gallery is fully responsive, uses a new JS code to make much more interesting image grids, and adapts to the browser using a nice and smooth animation ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/MosaicGallery)).
-- [**_Nastaligh (SVG art work)_**](https://amin-norollah.github.io/JS-code/Pages/Nastaligh/): it is interesting to work with SVG files and learn how to add some effects to those files. On this page, you can see I added gradient color and shadow to an SVG artwork, and it will change whenever the mouse hover or enter its area.
+- [**_Nastaligh (SVG artwork)_**](https://amin-norollah.github.io/JS-code/Pages/Nastaligh/): it is interesting to work with SVG files and learn how to add some effects to those files. On this page, you can see I added gradient color and shadow to an SVG artwork, and it will change whenever the mouse hover or enter its area.
 
 - (in process)
 
