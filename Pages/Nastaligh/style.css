@@ -72,9 +72,6 @@ a:hover {
 
 .main-container {
   display: flex;
-
-  color: #ffe08a;
-  color: #d89402;
 }
 
 .main-meaning {
@@ -104,6 +101,10 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
+  .main-container {
+    transform: translateY(-70px);
+  }
+
   #img-nastaligh {
     width: min(95vw, 95vh);
     height: min(95vw, 95vh);
