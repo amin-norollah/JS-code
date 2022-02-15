@@ -82,8 +82,7 @@ a:hover {
 }
 
 #img-nastaligh {
-  width: 90%;
-  margin: 3rem auto;
+  margin: 0.5rem auto 3rem auto;
   width: min(70vw, 70vh);
   height: min(70vw, 70vh);
 
@@ -102,4 +101,11 @@ footer {
   left: 0;
 
   text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  #img-nastaligh {
+    width: min(95vw, 95vh);
+    height: min(95vw, 95vh);
+  }
 }
