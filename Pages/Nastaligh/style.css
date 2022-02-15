@@ -1,9 +1,3 @@
-:root {
-  --gradient1: linear-gradient(135deg, #ff82f5 0%, #b32502 100%);
-  --gradient2: linear-gradient(135deg, #6cdde6 0%, #006e8a 100%);
-  --gradient3: ;
-}
-
 html {
   box-sizing: border-box;
 }
