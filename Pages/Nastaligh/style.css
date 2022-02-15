@@ -26,7 +26,7 @@ body {
 
   min-height: 100vh;
   background-position: 100% 50%;
-  transition: all 1.5s;
+  transition: background-position 1.5s;
 }
 
 h3 {
@@ -36,7 +36,7 @@ h3 {
   margin: 0.4rem;
 
   cursor: default;
-  transition: all 0.5s;
+  transition: transform 0.5s;
 }
 
 h3:hover {
@@ -74,17 +74,14 @@ a:hover {
 }
 
 .main-meaning {
-  width: 80%;
-  margin: 0 auto 2rem auto;
-
-  text-align: center;
+  margin-bottom: 2rem;
 }
 
 #img-nastaligh {
   width: 90%;
-  margin: auto;
-  width: min(80vw, 80vh);
-  height: min(80vw, 80vh);
+  margin: 3rem auto;
+  width: min(70vw, 70vh);
+  height: min(70vw, 70vh);
 
   transition: all 1.5s;
 }
@@ -95,8 +92,10 @@ a:hover {
 }
 
 footer {
-  width: 80%;
-  margin: auto;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
 
   text-align: center;
 }
