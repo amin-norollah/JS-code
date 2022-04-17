@@ -6,7 +6,7 @@
   
 # Welcome to my open-source JS projects
 
-I am the back-end JS developer and currently designing API using the ExpressJS, mongidb and swapper frameworks and tools. Besides it, I have a special interest in front-end designing, and sometimes I design vanilla JS pages. Although designing the web pages using a ReactJS framework is more popular todays, I prefer to share my thoughts with vanilla JS on this page, because I think it is much more fun and easier to understand and share.
+I am the back-end JS developer and currently designing RESTful API using the ExpressJS, mongidb and swapper frameworks and tools. Besides it, I have a special interest in front-end designing, and sometimes I design vanilla JS pages. Although designing the web pages using a ReactJS framework is more popular todays, I prefer to share my thoughts with vanilla JS on this page, because I think it is much more fun and easier to understand and share.
 
 I hope my projects could be helpful and interesting, and I am looking forward to give your feedbacks and experiences as well.
 
