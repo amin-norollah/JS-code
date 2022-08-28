@@ -29,10 +29,12 @@ The following is a list of pages that I developed:
 - Authentication and authorization using IdentityServer4
 - Using DTOs and Authomapper
 - Versioning
+- 
 for more information, please see [CSite Backend project](https://github.com/amin-norollah/CSite_Backend_dotNet6).
 
 ### CSite front-end using Angular
 It is my first open-source Angular project that I could share publicly. This project will connect to [CSite Backend project](https://github.com/amin-norollah/CSite_Backend_dotNet6) and work with it. Therefore, one should have enough knowledge to run both the .Net 6 back-end and Angular user interface in order to use these projects.
+
 for more information, please see [CSite Frontend project](https://github.com/amin-norollah/CSite_Frontend_Angular).
 
 
