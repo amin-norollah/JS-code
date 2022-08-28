@@ -12,7 +12,27 @@ I hope my projects could be helpful and interesting, and I am looking forward to
 
 The following is a list of pages that I developed:
 
-## 1. **Pages**
+## 1. **Web development projects**
+ Here I want to introduce my new open-source projects that I developed.
+ 
+ ### CSite back-end using .Net 6:
+ It is my first full open-source back-end project that I used it for my teaching as well. I tried to use most recent and modern technologies it its developement.
+ The below list is the main technologies that I used:
+- Build data-driven RESTful API
+- Using MS SQL server database and Entity framework
+- Using Unit of Work
+- Exception handler and response wrapper using AutoWrapper
+- Generic controllers and dependency injection 
+- Managing controllers using helper
+- Logging with Serilog
+- API documentation using SwaggerUI
+- Authentication and authorization using IdentityServer4
+- Using DTOs and Authomapper
+- Versioning
+for more information, please see [CSite Backend project](https://github.com/amin-norollah/CSite_Backend_dotNet6).
+
+
+## 2. **Pages**
 
 - [**_Flight booking demo_**](https://amin-norollah.github.io/JS-code/Pages/FlightBooking/): a responsive web page to search, book and manage international flight tickets ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/FlightBooking)).
 - [**_Business webpage demo_**](https://amin-norollah.github.io/JS-code/Pages/BusinessWebpage/): a classical web page suitable for business plans. This page is responsive and has a bunch of visual effects, such as a theme changer. It is worthy to note that all effects have been implemented manually, which boosts performance ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/BusinessWebpage)).
@@ -21,12 +41,12 @@ The following is a list of pages that I developed:
 
 - (in process)
 
-## 2. **Charts**
+## 3. **Charts**
 
 - [**_Heatmap demo_**](https://amin-norollah.github.io/JS-code/Charts/Heatmap/): a responsive and easy to use project for creating heatmap chart with the resolution between 10x10 and 80x80 pixels. I should mention that I did not use any library for implementing it. Thanks to CSS blur effect, the smooth results could be generated with higher resolution that can increase the performance ([more information](https://github.com/amin-norollah/JS-code/tree/main/Charts/Heatmap)).
 - (in process)
 
-## 3. **Games**
+## 4. **Games**
 
 - [**_Roll dice game_**](https://amin-norollah.github.io/JS-code/Games/RollDice): a simple dice game; whoever can get the most score wins!
 - [**_XO game manually_**](https://amin-norollah.github.io/JS-code/Games/XO-manual): a responsive XO game where two users can play with each other.
