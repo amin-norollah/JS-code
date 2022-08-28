@@ -13,10 +13,10 @@ I hope my projects could be helpful and interesting, and I am looking forward to
 The following is a list of pages that I developed:
 
 ## 1. **Web development projects**
- Here I want to introduce my new open-source projects that I developed.
+ Here I want to introduce the new open-source projects that I developed.
  
  ### CSite back-end using .Net 6:
- It is my first full open-source back-end project that I used it for my teaching as well. I tried to use most recent and modern technologies it its developement.
+ It is my first full open-source back-end project that I used it for my teaching as well. I tried to use the most recent and modern technologies in their development.
  The below list is the main technologies that I used:
 - Build data-driven RESTful API
 - Using MS SQL server database and Entity framework
@@ -30,6 +30,9 @@ The following is a list of pages that I developed:
 - Using DTOs and Authomapper
 - Versioning
 for more information, please see [CSite Backend project](https://github.com/amin-norollah/CSite_Backend_dotNet6).
+
+### CSite front-end using Angular
+It is my first open-source Angular project that I could share publicly. This project will connect to [CSite Backend project](https://github.com/amin-norollah/CSite_Backend_dotNet6) and work with it. Therefore, one should have enough knowledge to run both the .Net 6 back-end and Angular user interface in order to use these projects.
 
 
 ## 2. **Pages**
