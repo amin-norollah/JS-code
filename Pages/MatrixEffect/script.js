@@ -1,4 +1,5 @@
-// copyright: I developed and optimized the existing code from: Clive Cooper
+// copyright: Amin Norollah
+// I developed and optimized the existing code from: Clive Cooper
 // and I used matrix font from e-RBi (e-rbi.com).
 
 "use strict";
