@@ -233,8 +233,26 @@ DOM_sliderBtnRight.addEventListener("click", () => {
 DOM_nav_btnTheme.addEventListener("click", (e) => {
   for (let i = 0; i < 3; i++)
     RootSwapProperty(`--color-background-${i}`, `--color-background-${i}-dark`);
+
   for (let i = 0; i < 4; i++)
     RootSwapProperty(`--color-font-${i}`, `--color-font-${i}-dark`);
+
+  const pattern = document.querySelector(".section-social-background");
+  if (
+    pattern.style.getPropertyValue("background-image") ===
+    'url("img/pattern-1.png")'
+  )
+    pattern.style.setProperty(
+      "background-image",
+      'url("img/pattern-2.png")',
+      null
+    );
+  else
+    pattern.style.setProperty(
+      "background-image",
+      'url("img/pattern-1.png")',
+      null
+    );
 });
 
 const RootSwapProperty = function (item1, item2) {
