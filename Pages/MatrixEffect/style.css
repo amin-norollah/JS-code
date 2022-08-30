@@ -1,0 +1,15 @@
+@font-face {
+  font-family: MatrixFont;
+  src: url(MatrixCodeFont.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: MatrixFont, "Times New Roman", Times, serif;
+}
+body {
+  background: #000;
+}
+canvas {
+  display: block;
+}
