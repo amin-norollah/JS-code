@@ -6,7 +6,9 @@
   
 # Welcome to my open-source JS (and .Net) projects
 
-I am the back-end JS developer and currently designing RESTful API using the ExpressJS, mongidb and swapper frameworks and tools. Besides it, I have a special interest in front-end designing, and sometimes I design vanilla JS pages. Although designing the web pages using a ReactJS framework is more popular todays, I prefer to share my thoughts with vanilla JS on this page, because I think it is much more fun and easier to understand and share.
+My role as a developer focuses on back-end development, where I am currently working on designing a RESTful API using a combination of frameworks and tools such as .Net, ExpressJS, MongoDB, Swagger, and so on.
+
+Although back-end development is my primary area of expertise, I also have a special interest in front-end design. From time to time, I enjoy creating vanilla JS pages, as I find it to be a fun and engaging way to express my creativity. While frameworks like Angular and ReactJS is currently a more popular tools for front-end development, I prefer to share my thoughts on vanilla JS on this page. I believe that it is an easier and more accessible way to understand and share my ideas with others.
 
 I hope my projects could be helpful and interesting, and I am looking forward to give your feedbacks and experiences as well.
 
