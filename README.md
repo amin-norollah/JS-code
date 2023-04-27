@@ -18,8 +18,7 @@ The following is a list of pages that I developed:
  Here I want to introduce the new open-source projects that I developed.
  
  ### CSite back-end using .Net 6:
- It is my first full open-source back-end project that I used it for my teaching as well. I tried to use the most recent and modern technologies in their development.
- The below list is the main technologies that I used:
+I utilized modern technologies to develop my first full open-source back-end project, which I also incorporated into my teaching. Below are the main technologies that I employed:
 - Build data-driven RESTful API
 - Using MS SQL server database and Entity framework
 - Using Unit of Work
@@ -35,13 +34,13 @@ The following is a list of pages that I developed:
 for more information, please see [CSite Backend project](https://github.com/amin-norollah/CSite_Backend_dotNet6).
 
 ### CSite front-end using Angular
-It is my first open-source Angular project that I could share publicly. This project will connect to [CSite Backend project](https://github.com/amin-norollah/CSite_Backend_dotNet6) and work with it. Therefore, one should have enough knowledge to run both the .Net 6 back-end and Angular user interface in order to use these projects (under construction).
+This is the first Angular project that I have created and made publicly available as an open-source project. This project is designed to interface with the CSite Backend project, so users will need to have sufficient knowledge to run both the .NET 6 backend and Angular user interface in order to utilize these projects, which are currently under construction.
 
 for more information, please see [CSite Frontend project](https://github.com/amin-norollah/CSite_angular).
 
 
 ## 2. **Pages**
-- [**Matrix effect**](https://amin-norollah.github.io/JS-code/Pages/MatrixEffect/): It is one of my favorite projects. Do you remember the machine code effect in the Matrix movies? This project is a **fully optimized matrix code animated background**. It is not written by me, but I developed and optimized it and tried to make it similar to one in the Matrix movies.
+- [**Matrix effect**](https://amin-norollah.github.io/JS-code/Pages/MatrixEffect/):This project is among my favorites. You might recall the iconic machine code effect used in the Matrix movies - this project features a **fully optimized animated background that mimics Matrix effect**. While I didn't create the code myself, I did work on its development and optimization to closely resemble the effect used in the movies.
 - [**_Flight booking demo_**](https://amin-norollah.github.io/JS-code/Pages/FlightBooking/): a responsive web page to search, book and manage international flight tickets ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/FlightBooking)).
 - [**_Business webpage demo_**](https://amin-norollah.github.io/JS-code/Pages/BusinessWebpage/): a classical web page suitable for business plans. This page is responsive and has a bunch of visual effects, such as a theme changer. It is worthy to note that all effects have been implemented manually, which boosts performance ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/BusinessWebpage)).
 - [**_Mosaic art gallery demo_**](https://amin-norollah.github.io/JS-code/Pages/MosaicGallery/): this image photo gallery is fully responsive, uses a new features of vanilla JS to make much more interesting image grids album, and adapts to the browser using a nice and smooth animation ([more information](https://github.com/amin-norollah/JS-code/tree/main/Pages/MosaicGallery)).
@@ -51,7 +50,7 @@ for more information, please see [CSite Frontend project](https://github.com/ami
 
 ## 3. **Charts**
 
-- [**_Heatmap demo_**](https://amin-norollah.github.io/JS-code/Charts/Heatmap/): a responsive and easy to use project for creating heatmap chart with the resolution between 10x10 and 80x80 pixels. I should mention that I did not use any library for implementing it. Thanks to CSS blur effect, the smooth results could be generated with higher resolution that can increase the performance ([more information](https://github.com/amin-norollah/JS-code/tree/main/Charts/Heatmap)).
+- [**_Heatmap demo_**](https://amin-norollah.github.io/JS-code/Charts/Heatmap/): This is a user-friendly and responsive project that allows for the creation of heatmap charts with resolutions ranging from 10x10 to 80x80 pixels. Notably, no libraries were used in its implementation. Instead, the CSS blur effect was employed to generate smooth results even at higher resolutions, thereby enhancing performance. ([more information](https://github.com/amin-norollah/JS-code/tree/main/Charts/Heatmap)).
 - (in process)
 
 ## 4. **Games**
